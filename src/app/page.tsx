@@ -1,65 +1,131 @@
+"use client";
 import Image from "next/image";
+import Link from "next/link";
+import Navbar from "./components/Navbar";
+import TextType from "./components/texttype";
+import AOS from "aos";                    
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+import About from "./About/about";
+import Skills from "./Skills/skills";
+import Projects from "./Projects/projects";
+import Testimonials from "./Testimonials/testimonials";
+import Contact from "./Contact/contact";
+import { Facebook, Instagram, Github, Linkedin, Images } from "lucide-react";
 
 export default function Home() {
+
+   useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: "ease-in-out",
+    });
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      <Navbar />
+
+      <div id="home" className="min-h-screen bg-white w-full  p-5 flex sm:flex-col sm:flex-row items-center justify-center">
+        <div  data-aos="fade-right" className=" grid items-center max-w-3xl w-full m-5 h-auto p-5">
+          <p className="text-red-600 text-2xl font-bold text-center sm:text-left">
+            Hi, It's me
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+          <h1 className="text-black text-3xl font-semibold text-center sm:text-left">
+            Karl Christian M. Brizuela
+          </h1>
+
+          <span className="text-black flex flex-wrap justify-center sm:justify-start font-semibold gap-2 text-4xl">
+            Future
+            <TextType
+              className="text-black font-semibold text-4xl"
+              text={["Full Stack Developer","Software Engineer","Project Manager", ]}
+              typingSpeed={75}
+              pauseDuration={1500}
+              showCursor={true}
+              cursorCharacter="|"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </span>
+
+          <p className="text-black text-center sm:text-left text-xs p-2">
+            I’m passionate about working with people and getting things done. I
+            believe in leading by example, supporting my team, and turning
+            challenges into opportunities. Collaboration, dedication, and a
+            positive mindset guide everything I do.
+          </p>
+
+          <div className="text-black flex flex-wrap justify-center sm:justify-start p-2">
+            <ul className="flex flex-wrap gap-5 justify-center sm:justify-start">
+              <li className="border rounded-4xl p-2 transition hover:bg-red-600 hover:text-white">
+                <a href="https://www.facebook.com/karlchristian.mbrizuela">
+                  <Facebook />
+                </a>
+              </li>
+              <li className="border rounded-4xl p-2 transition hover:bg-red-600 hover:text-white">
+                <a href="https://www.instagram.com/karl_brizuela/">
+                  <Instagram />
+                </a>
+              </li>
+              <li className="border rounded-4xl p-2 transition hover:bg-red-600 hover:text-white">
+                <a href="https://github.com/KarlBrizuela">
+                  <Github />
+                </a>
+              </li>
+              <li className="border rounded-4xl p-2 transition hover:bg-red-600 hover:text-white">
+                <a href="https://www.linkedin.com/in/karl-christian-m-brizuela-144795374">
+                  <Linkedin />
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div className="flex flex-col sm:flex-row border-black justify-center sm:justify-start">
+            <Link
+              href="/contact"
+              className="text-black border m-3 w-40 p-2 rounded-4xl transition hover:bg-black hover:text-white flex justify-center"
+            >
+              get in touch
+            </Link>
+            <Link
+              className="text-black border m-3 w-40 p-2 rounded-4xl transition hover:bg-black hover:text-white flex justify-center"
+              href=""
+            >
+              Download CV
+            </Link>
+          </div>
+
+          
+
         </div>
-      </main>
-    </div>
+        
+        <div data-aos="fade-left"className="flex-1 flex justify-center  ">
+          <Image src="/karl.png" width={300} height={100} className="rounded-4xl object-cover shadow-lg border-8 border-red-600"/>
+        </div>
+        
+      </div>
+
+      <section id="about">
+       <About />
+      </section>
+
+      <section id="skills">
+        <Skills />
+      </section>
+
+      <section id="projects">
+        <Projects />
+      </section>
+
+      <section id="testimonials">
+        <Testimonials/>
+      </section>
+
+      <section id="contact">
+        <Contact/>
+      </section>
+
+    
+    </>
   );
 }
