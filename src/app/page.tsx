@@ -27,19 +27,19 @@ export default function Home() {
     <>
       <Navbar />
 
-      <div id="home" className="min-h-screen bg-white w-full  p-5 flex sm:flex-col sm:flex-row items-center justify-center">
-        <div  data-aos="fade-right" className=" grid items-center max-w-3xl w-full m-5 h-auto p-5">
+      <div id="home" className="min-h-screen bg-white w-full  p-5 flex sm:flex-col sm:flex-row items-center justify-center gap-0">
+        <div  data-aos="fade-right" className="  grid items-center max-w-3xl w-full m-5 h-auto p-3">
           <p className="text-red-600 text-2xl font-bold text-center sm:text-left">
             Hi, It's me
           </p>
-          <h1 className="text-black text-3xl font-semibold text-center sm:text-left">
+          <h1 className="text-black text-5xl font-semibold text-center sm:text-left">
             Karl Christian M. Brizuela
           </h1>
 
           <span className="text-black flex flex-wrap justify-center sm:justify-start font-semibold gap-2 text-4xl">
             Future
             <TextType
-              className="text-black font-semibold text-4xl"
+              className="text-red-600 font-semibold text-5xl"
               text={["Full Stack Developer","Software Engineer","Project Manager", ]}
               typingSpeed={75}
               pauseDuration={1500}
@@ -48,7 +48,7 @@ export default function Home() {
             />
           </span>
 
-          <p className="text-black text-center sm:text-left text-xs p-2">
+          <p className="text-black text-center sm:text-left text-1xl p-2">
             I’m passionate about working with people and getting things done. I
             believe in leading by example, supporting my team, and turning
             challenges into opportunities. Collaboration, dedication, and a
@@ -83,12 +83,12 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row border-black justify-center sm:justify-start">
             <Link
               href="/contact"
-              className="text-black border m-3 w-40 p-2 rounded-4xl transition hover:bg-black hover:text-white flex justify-center"
+              className="text-black border m-3 w-50 p-2 rounded-4xl transition hover:bg-black hover:text-white flex justify-center"
             >
               get in touch
             </Link>
             <Link
-              className="text-black border m-3 w-40 p-2 rounded-4xl transition hover:bg-black hover:text-white flex justify-center"
+              className="text-black border m-3 w-50 p-2 rounded-4xl transition hover:bg-black hover:text-white flex justify-center"
               href=""
             >
               Download CV
@@ -98,9 +98,9 @@ export default function Home() {
           
 
         </div>
-        
-        <div data-aos="fade-left"className="flex-1 flex justify-center  ">
-          <Image src="/karl.png" width={300} height={100} className="rounded-4xl object-cover shadow-lg border-8 border-red-600"/>
+
+        <div data-aos="fade-left" className="flex-1 flex justify-center  max-w-2xl ">
+          <Image src="/karl.png" width={300} height={400} className="rounded-4xl object-cover shadow-lg border-8 border-red-600"/>
         </div>
         
       </div>

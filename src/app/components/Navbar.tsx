@@ -57,14 +57,14 @@ export default function Navbar() {
             <Presentation size={18} /> Projects
           </button>
         </li>
-        <li>
+        {/* <li>
           <button 
             onClick={() => handleSmoothScroll('testimonials')}
             className="flex items-center gap-2 px-3 py-2 rounded-md transition duration-300 hover:bg-black hover:text-white cursor-pointer"
           >
             <MessageSquare size={18} /> Testimonials
           </button>
-        </li>
+        </li> */}
         <li>
           <button 
             onClick={() => handleSmoothScroll('contacts')}
