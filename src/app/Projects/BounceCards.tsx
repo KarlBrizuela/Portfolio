@@ -48,25 +48,20 @@ export default function BounceCards({
   }, [animationDelay, animationStagger, easeType]);
 
   const getNoRotationTransform = (transformStr: string): string => {
-    const hasRotate = /rotate\([\s\S]*?\)/.test(transformStr);
-    if (hasRotate) {
-      return transformStr.replace(/rotate\([\s\S]*?\)/, 'rotate(0deg)');
-    } else if (transformStr === 'none') {
-      return 'rotate(0deg)';
-    } else {
-      return `${transformStr} rotate(0deg)`;
-    }
+    const translateMatch = transformStr.match(/translate\([-0-9.]+px,\s*[-0-9.]+px\)/);
+    return translateMatch ? translateMatch[0] : 'translate(0px, 0px)';
   };
 
   const getPushedTransform = (baseTransform: string, offsetX: number): string => {
-    const translateRegex = /translate\(([-0-9.]+)px\)/;
+    const translateRegex = /translate\(([-0-9.]+)px,\s*([-0-9.]+)px\)/;
     const match = baseTransform.match(translateRegex);
     if (match) {
       const currentX = parseFloat(match[1]);
+      const currentY = parseFloat(match[2]);
       const newX = currentX + offsetX;
-      return baseTransform.replace(translateRegex, `translate(${newX}px)`);
+      return baseTransform.replace(translateRegex, `translate(${newX}px, ${currentY}px)`);
     } else {
-      return baseTransform === 'none' ? `translate(${offsetX}px)` : `${baseTransform} translate(${offsetX}px)`;
+      return `translate(${offsetX}px, 0px)`;
     }
   };
 
@@ -126,11 +121,13 @@ export default function BounceCards({
 
   return (
     <div
-      className={`relative flex items-center justify-center ${className}`}
+      className={`relative flex items-center justify-center overflow-visible ${className}`}
       ref={containerRef}
       style={{
         width: containerWidth,
-        height: containerHeight
+        height: containerHeight,
+        perspective: '1200px',
+        transformStyle: 'preserve-3d' as any
       }}
     >
       {images.map((src, idx) => (

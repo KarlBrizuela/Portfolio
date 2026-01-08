@@ -23,8 +23,8 @@ export default function Skills() {
     ];
     return (
         <>
-       <section id="skills" className="bg-white py-20">
-      <h2 className="text-xl font-bold text-center text-black mb-10 m-10">
+       <section id="skills" className=" py-20">
+      <h2 className="text-xl font-bold text-center  mb-10 m-10">
         MY SKILLS
       </h2>
 
@@ -33,8 +33,8 @@ export default function Skills() {
           <div key={index} className="border border-red-300 rounded-lg p-4 shadow-sm">
             
             <div  className="flex items-center gap-2 mb-3">
-              <skill.icon className="text-black" size={20} />
-              <p className="font-semibold text-black">
+              <skill.icon className="" size={20} />
+              <p className="font-semibold ">
                 {skill.title}
               </p>
             </div>

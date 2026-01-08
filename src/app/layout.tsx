@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import 'aos/dist/aos.css';
+import { Providers } from "./providers";
 
 
 // const geistSans = Geist({
@@ -36,12 +37,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <>
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${poppins.className}  antialiased`}
+        className={`${poppins.className} antialiased`}
       >
-        {children}
+         <Providers>
+           {children}
+         </Providers>
       </body>
     </html>
+    </>
   );
 }

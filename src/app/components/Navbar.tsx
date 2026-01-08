@@ -1,9 +1,12 @@
 "use client";
 import { useState } from "react";
-import {Home,Info,Brain,Mail,Presentation,MessageSquare,Menu,X,} from "lucide-react";
+import {Home,Info,Brain,Mail,Presentation,MessageSquare,Menu,X,Moon, Sun} from "lucide-react";
+import { useTheme } from "next-themes";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [themeOpen, setThemeOpen] = useState(false);
+  const { setTheme, theme } = useTheme();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -73,6 +76,26 @@ export default function Navbar() {
             <Mail size={18} /> Contact
           </button>
         </li>
+
+        <li className="relative">
+          <button 
+            onClick={() => setThemeOpen(!themeOpen)}
+            className="flex items-center gap-2 px-3 py-2 rounded-md transition duration-300 hover:bg-black hover:text-white cursor-pointer"
+          >
+            {theme === "light" ? (
+              <Sun size={18} />
+            ) : (
+              <Moon size={18} />
+            )}
+          </button>
+          {themeOpen && (
+            <div className="absolute top-full right-0 mt-2  dark:bg-white border   rounded-md shadow-lg">
+              <button onClick={() => { setTheme("light"); setThemeOpen(false); }} className="flex items-center gap-2 w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-red-700"><Sun size={18} /> Light</button>
+              <button onClick={() => { setTheme("dark"); setThemeOpen(false); }} className="flex items-center gap-2 w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-red-700"><Moon size={18} /> Dark</button>
+              {/* <button onClick={() => { setTheme("system"); setThemeOpen(false); }} className="flex items-center gap-2 w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-red-700"><Moon size={18} /> System</button> */}
+            </div>
+          )}
+          </li>
       </ul>
 
       
