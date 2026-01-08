@@ -1,7 +1,38 @@
 "use client";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Testimonials() {
+
+   const [loading, setLoading] = useState(false);
+
+  const sendEmail = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const formData = {
+      name: e.target.name.value,
+      phone: e.target.phone.value,
+      email: e.target.email.value,
+      message: e.target.message.value,
+    };
+
+    const res = await fetch("/api", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    setLoading(false);
+
+    if (res.ok) {
+      alert("Message sent successfully!");
+      e.target.reset();
+    } else {
+      alert("Failed to send message. Try again later.");
+    }
+  };
+
     return (
         <>
         <section id="contacts" className="min-h-screen  py-20">
@@ -15,19 +46,22 @@ export default function Testimonials() {
               </div>
 
               <div className=" p-5 ">
+                <form onSubmit={sendEmail}>
                 <div className=" flex align-center justify-center gap-7 p-3">
-                <input type="text" placeholder="Enter your Full Name" className=" border  p-3 rounded-2xl w-64 hover:border-red-600">
+                <input type="text" name="name" placeholder="Enter your Full Name" className=" border  p-3 rounded-2xl w-64 hover:border-red-600">
                </input>
-                <input type="number" placeholder="Enter your Phone number"className=" border  w-64 p-3 rounded-2xl hover:border-red-600"></input>
+                <input type="number" name="phone" placeholder="Enter your Phone number"className=" border  w-64 p-3 rounded-2xl hover:border-red-600"></input>
                 </div>
 
                 <div className=" p-3">
-                 <input type="email" placeholder="Enter your Email" className=" border  w-135 p-3 rounded-2xl m-2 hover:border-red-600"></input>
-                 <textarea placeholder="Type your message here..." className=" border  w-135 p-3 rounded-2xl m-2 h-64 resize-none hover:border-red-600"></textarea>
+                 <input type="text" name="email" placeholder="Enter your Email" className=" border  w-135 p-3 rounded-2xl m-2 hover:border-red-600"></input>
+                 <textarea name="message" placeholder="Type your message here..." className=" border  w-135 p-3 rounded-2xl m-2 h-64 resize-none hover:border-red-600"></textarea>
                   
-                  <button className="border border-red-600  p-3 m-2 w-135 rounded-3xl bg-red-600" type="submit">Submit Appointment</button>
+                  <button type="submit" className={`border border-red-600 p-3 w-full rounded-3xl text-white ${loading ? "bg-gray-400" : "bg-red-600"}`} disabled={loading}>
+                {loading ? "Sending..." : "Submit Appointment"}
+              </button>
               </div>
-     
+                </form>
               </div>
               
              </div>
