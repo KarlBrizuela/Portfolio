@@ -34,10 +34,11 @@ export default function BounceCards({
   onCardClick
 }: BounceCardsProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isMounted, setIsMounted] = React.useState(false);
   
   // Responsive dimensions
   const getResponsiveDimensions = () => {
-    if (typeof window === 'undefined') return { width: containerWidth, height: containerHeight };
+    if (typeof window === 'undefined') return { width: containerWidth, height: containerHeight, cardSize: 240 };
     
     const width = window.innerWidth;
     if (width < 640) {
@@ -55,6 +56,9 @@ export default function BounceCards({
   const [dimensions, setDimensions] = React.useState(() => getResponsiveDimensions());
 
   React.useEffect(() => {
+    setIsMounted(true);
+    setDimensions(getResponsiveDimensions());
+    
     const handleResize = () => {
       setDimensions(getResponsiveDimensions());
     };
@@ -169,6 +173,10 @@ export default function BounceCards({
           style={{
             width: `${dimensions.cardSize}px`,
             height: `${dimensions.cardSize}px`,
+            minWidth: `${dimensions.cardSize}px`,
+            minHeight: `${dimensions.cardSize}px`,
+            maxWidth: `${dimensions.cardSize}px`,
+            maxHeight: `${dimensions.cardSize}px`,
             boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
             transform: transformStyles[idx] || 'none',
             flexShrink: 0,
