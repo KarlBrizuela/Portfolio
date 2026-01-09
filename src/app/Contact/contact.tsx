@@ -1,12 +1,12 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, FormEvent } from "react";
 
 export default function Testimonials() {
 
    const [loading, setLoading] = useState(false);
 
-  const sendEmail = async (e) => {
+  const sendEmail = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
 
