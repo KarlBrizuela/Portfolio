@@ -109,7 +109,7 @@ export default function Home() {
         </div>
 
         <div data-aos="fade-left" className=" hidden md:flex flex-1 justify-center w-full md:w-auto mt-6 md:mt-0">
-          <Image src="/karl.png" width={300} height={400} className="rounded-4xl object-cover shadow-lg border-8 border-red-600 w-48 h-64 sm:w-64 sm:h-80 md:w-80 md:h-full"/>
+          <Image src="/karl.png" width={300} height={400} alt="Karl Christian Brizuela" className="rounded-4xl object-cover shadow-lg border-8 border-red-600 w-48 h-64 sm:w-64 sm:h-80 md:w-80 md:h-full"/>
         </div>
         
       </div>
