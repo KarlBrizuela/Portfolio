@@ -10,11 +10,12 @@ export default function Testimonials() {
     e.preventDefault();
     setLoading(true);
 
+    const target = e.target as HTMLFormElement;
     const formData = {
-      name: e.target.name.value,
-      phone: e.target.phone.value,
-      email: e.target.email.value,
-      message: e.target.message.value,
+      name: (target.elements.namedItem('name') as HTMLInputElement).value,
+      phone: (target.elements.namedItem('phone') as HTMLInputElement).value,
+      email: (target.elements.namedItem('email') as HTMLInputElement).value,
+      message: (target.elements.namedItem('message') as HTMLTextAreaElement).value,
     };
 
     const res = await fetch("/api", {
