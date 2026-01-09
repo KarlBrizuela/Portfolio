@@ -28,7 +28,7 @@ export default function Testimonials() {
 
     if (res.ok) {
       alert("Message sent successfully!");
-      e.target.reset();
+      target.reset();
     } else {
       alert("Failed to send message. Try again later.");
     }
