@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { X } from "lucide-react";
-import BounceCards from './BounceCards.tsx';
+import BounceCards from './BounceCards';
 
 export default function Projects() {
     const [transformStyles, setTransformStyles] = useState<string[]>([]);
