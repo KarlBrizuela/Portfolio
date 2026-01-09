@@ -55,12 +55,12 @@ export default function About() {
 
               <li className="flex gap-3 items-center">
                 <Mail className="rounded-xl bg-black dark:bg-white light:bg-black text-white dark:text-black items-center p-1 flex-shrink-0" size={28} />
-                <span className="text-xs sm:text-sm lg:text-base break-all">karl.brizuela01@gmail.com</span>
+                <span className="text-xs sm:text-sm lg:text-base break-all">karl.brizuela01@gmail.com | brizuela.karlchristian.bscs2022@gmail.com</span>
               </li>
             </ul>
               
-               <p className="text-xs sm:text-sm lg:text-base text-center lg:text-left">"I can do all things through God who strengthens me."
-                <span className="block text-center lg:text-left">- Philippians 4:13</span>
+               <p className="text-xs sm:text-sm lg:text-base text-center lg:text-left">" I can do all things through God who strengthens me. "
+                <span className="block text-center lg:text-left"> - Philippians 4:13</span>
                </p>
 
 
