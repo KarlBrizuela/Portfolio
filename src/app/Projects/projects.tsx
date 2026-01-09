@@ -12,7 +12,7 @@ export default function Projects() {
       "/Checkitup.png",
       "/Ramen.png",
      "/amoure.png",
-     "/maxtel.png",
+     "/Maxtel.png",
      "/mrf.png",
      "/multitop.png",
      "/powerlug.png",
