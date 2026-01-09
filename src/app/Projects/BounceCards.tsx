@@ -12,6 +12,7 @@ interface BounceCardsProps {
   easeType?: string;
   transformStyles?: string[];
   enableHover?: boolean;
+  onCardClick?: (index: number, image: string) => void;
 }
 
 export default function BounceCards({
@@ -29,7 +30,8 @@ export default function BounceCards({
     'rotate(-10deg) translate(85px)',
     'rotate(2deg) translate(170px)'
   ],
-  enableHover = false
+  enableHover = false,
+  onCardClick
 }: BounceCardsProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   
@@ -46,7 +48,7 @@ export default function BounceCards({
       return { width: 600, height: 380, cardSize: 260 };
     } else {
       // Desktop
-      return { width: 1400, height: 450, cardSize: 320 };
+      return { width: 1500, height: 350, cardSize: 240 };
     }
   };
 
@@ -163,15 +165,32 @@ export default function BounceCards({
       {images.map((src, idx) => (
         <div
           key={idx}
-          className={`card card-${idx} absolute aspect-square border-4 sm:border-6 md:border-8 border-white rounded-[20px] sm:rounded-[25px] md:rounded-[30px] overflow-hidden`}
+          className={`card card-${idx} absolute border-4 sm:border-6 md:border-8 border-white rounded-[20px] sm:rounded-[25px] md:rounded-[30px] overflow-hidden flex-shrink-0 cursor-pointer group`}
           style={{
-            width: dimensions.cardSize,
-            height: dimensions.cardSize,
+            width: `${dimensions.cardSize}px`,
+            height: `${dimensions.cardSize}px`,
             boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
-            transform: transformStyles[idx] || 'none'
+            transform: transformStyles[idx] || 'none',
+            flexShrink: 0,
+            transition: 'filter 0.3s ease, box-shadow 0.3s ease'
           }}
-          onMouseEnter={() => pushSiblings(idx)}
-          onMouseLeave={resetSiblings}
+          onMouseEnter={() => {
+            pushSiblings(idx);
+            const element = document.querySelector(`.card-${idx}`) as HTMLElement;
+            if (element) {
+              element.style.filter = 'brightness(1.15) drop-shadow(0 8px 20px rgba(255, 0, 0, 0.4))';
+              element.style.boxShadow = '0 8px 25px rgba(255, 0, 0, 0.5)';
+            }
+          }}
+          onMouseLeave={() => {
+            resetSiblings();
+            const element = document.querySelector(`.card-${idx}`) as HTMLElement;
+            if (element) {
+              element.style.filter = 'brightness(1)';
+              element.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.2)';
+            }
+          }}
+          onClick={() => onCardClick?.(idx, src)}
         >
           <img className="w-full h-full object-cover" src={src} alt={`card-${idx}`} />
         </div>

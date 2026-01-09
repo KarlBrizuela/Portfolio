@@ -1,10 +1,12 @@
 "use client";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { X } from "lucide-react";
 import BounceCards from './BounceCards.tsx';
 
 export default function Projects() {
     const [transformStyles, setTransformStyles] = useState<string[]>([]);
+    const [selectedCard, setSelectedCard] = useState<{index: number; image: string} | null>(null);
 
     const images = [
       "/Checkitup.png",
@@ -51,18 +53,18 @@ export default function Projects() {
             "rotate(16deg) translate(250px, 0px)"
           ];
         } else {
-          // Desktop - larger offsets
+          // Desktop - smaller offsets for smaller cards
           return [
-            "rotate(-12deg) translate(-320px, 0px)",
-            "rotate(-8deg) translate(-210px, 0px)",
-            "rotate(-4deg) translate(-140px, 0px)",
-            "rotate(-2deg) translate(-70px, 0px)",
+            "rotate(-12deg) translate(-240px, 0px)",
+            "rotate(-8deg) translate(-160px, 0px)",
+            "rotate(-4deg) translate(-100px, 0px)",
+            "rotate(-2deg) translate(-50px, 0px)",
             "rotate(0deg) translate(0px, 0px)",
-            "rotate(2deg) translate(70px, 0px)",
-            "rotate(4deg) translate(140px, 0px)",
-            "rotate(8deg) translate(210px, 0px)",
-            "rotate(12deg) translate(320px, 0px)",
-            "rotate(16deg) translate(400px, 0px)"
+            "rotate(2deg) translate(50px, 0px)",
+            "rotate(4deg) translate(100px, 0px)",
+            "rotate(8deg) translate(160px, 0px)",
+            "rotate(12deg) translate(240px, 0px)",
+            "rotate(16deg) translate(300px, 0px)"
           ];
         }
       };
@@ -89,15 +91,34 @@ export default function Projects() {
          
   className="custom-bounceCards"
   images={images}
-  containerWidth={1400}
+  containerWidth={500}
   containerHeight={450}
   animationDelay={2}
   animationStagger={0.08}
   easeType="elastic.out(1, 0.5)"
   transformStyles={transformStyles}
   enableHover={true}
+  onCardClick={(index, image) => setSelectedCard({index, image})}
 />
          </div>
+
+         {selectedCard && (
+           <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
+             <div className="relative bg-white dark:bg-gray-900 rounded-2xl max-w-2xl w-full max-h-[80vh] overflow-auto">
+               <button
+                 onClick={() => setSelectedCard(null)}
+                 className="absolute top-4 right-4 p-2 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-full transition z-10"
+               >
+                 <X size={24} />
+               </button>
+               <img 
+                 src={selectedCard.image} 
+                 alt="Selected project" 
+                 className="w-full h-auto object-cover rounded-2xl"
+               />
+             </div>
+           </div>
+         )}
         </section>
         </>
     );

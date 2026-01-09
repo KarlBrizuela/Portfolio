@@ -50,7 +50,7 @@ export default function Navbar() {
 
   return (
     <nav id="navbar" className="fixed top-0 left-1/2 -translate-x-1/2 w-[95%] sm:w-auto px-2 sm:px-5 md:px-8 text-black dark:text-white py-2 sm:py-3 bg-transparent z-50">
-      <div className="flex justify-between items-center px-3 sm:px-6 rounded-lg bg-white/30 dark:bg-black/30 backdrop-blur-md shadow-2xl py-2 sm:py-3">
+      <div className="flex justify-between md:justify-start md:gap-8 lg:gap-12 items-center px-3 sm:px-6 rounded-lg bg-white/30 dark:bg-black/30 backdrop-blur-md shadow-2xl py-2 sm:py-3">
      
         <h1 className="font-bold text-xs sm:text-lg md:text-2xl whitespace-nowrap flex-shrink-0">EINAKRL</h1>
 

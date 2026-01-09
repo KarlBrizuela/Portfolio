@@ -98,7 +98,7 @@ export default function Home() {
             </button>
             <Link
               className="border p-2 px-4 sm:px-6 rounded-4xl transition hover:bg-red-600 hover:text-white flex justify-center text-sm sm:text-base"
-              href=""
+              href="/karlcv.pdf"
             >
               Download CV
             </Link>
