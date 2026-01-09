@@ -23,18 +23,18 @@ export default function Skills() {
     ];
     return (
         <>
-       <section id="skills" className=" py-20">
-      <h2 className="text-xl font-bold text-center  mb-10 m-10">
+       <section id="skills" className="w-full py-12 md:py-20 px-4 sm:px-6 md:px-8">
+      <h2 className="text-lg sm:text-xl font-bold text-center mb-8 md:mb-10 m-6 md:m-10">
         MY SKILLS
       </h2>
 
-      <div data-aos="fade-right" className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4">
+      <div data-aos="fade-right" className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-6 px-2 sm:px-4">
         {skills.map((skill, index) => (
-          <div key={index} className="border border-red-300 rounded-lg p-4 shadow-sm">
+          <div key={index} className="border border-red-300 rounded-lg p-3 sm:p-4 shadow-sm hover:border-red-600 transition">
             
-            <div  className="flex items-center gap-2 mb-3">
-              <skill.icon className="" size={20} />
-              <p className="font-semibold ">
+            <div className="flex items-center gap-2 mb-3">
+              <skill.icon className="text-red-600" size={20} />
+              <p className="font-semibold text-sm sm:text-base">
                 {skill.title}
               </p>
             </div>
@@ -44,12 +44,12 @@ export default function Skills() {
 
        <div
   data-aos="fade-right"
-  className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 mt-10"
+  className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 md:gap-6 px-2 sm:px-4 mt-8 md:mt-10"
 >
   {programming.map((item, index) => (
     <div
       key={index}
-      className="relative h-40 border border-red-300 rounded-lg overflow-hidden shadow-sm"
+      className="relative h-32 sm:h-40 md:h-48 border border-red-300 rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition"
     >
       {/* Background Image */}
       <Image
@@ -61,7 +61,7 @@ export default function Skills() {
 
      
       <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-        <p className="font-semibold text-white text-lg">
+        <p className="font-semibold text-white text-sm sm:text-base md:text-lg text-center">
           {item.title}
         </p>
       </div>

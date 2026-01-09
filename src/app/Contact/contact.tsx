@@ -35,29 +35,29 @@ export default function Testimonials() {
 
     return (
         <>
-        <section id="contacts" className="min-h-screen  py-20">
-             <h2 className="text-xl font-bold text-center m-10 mb-10">CONTACTS</h2>
+        <section id="contacts" className="min-h-screen w-full py-12 md:py-20 px-4 sm:px-6 md:px-8">
+             <h2 className="text-lg sm:text-xl font-bold text-center m-6 md:m-10 mb-10">CONTACTS</h2>
 
-             <div className=" flex items-center justify-center mx-auto border    p-3 m-6 max-w-7xl h-auto  rounded-4xl hover:border-red-600">
-                <div className=" p-5 max-w-3xl">
-             <h3 className="text-red-600 text-2xl  text-start font-medium p-3">Get in touch</h3>
-              <h1 className="flex text-4xl  p-1 font-semibold" >Let's discuss something <br></br> cool together</h1>
-                <p className="  p-3">I'm open to new opportunities and collaborations. Whether you have a project in mind, need assistance, or just want to say hello, feel free to reach out. Let's connect and explore how we can work together to create something amazing!</p>
+             <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 mx-auto border p-4 sm:p-6 md:p-8 max-w-7xl h-auto rounded-4xl hover:border-red-600">
+                <div className="p-4 sm:p-6 md:p-8 w-full md:w-auto">
+             <h3 className="text-red-600 text-xl sm:text-2xl text-start font-medium p-2 md:p-3">Get in touch</h3>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl p-1 font-semibold text-start">Let's discuss something cool together</h1>
+                <p className="p-2 md:p-3 text-sm sm:text-base leading-relaxed">I'm open to new opportunities and collaborations. Whether you have a project in mind, need assistance, or just want to say hello, feel free to reach out. Let's connect and explore how we can work together to create something amazing!</p>
               </div>
 
-              <div className=" p-5 ">
-                <form onSubmit={sendEmail}>
-                <div className=" flex align-center justify-center gap-7 p-3">
-                <input type="text" name="name" placeholder="Enter your Full Name" className=" border  p-3 rounded-2xl w-64 hover:border-red-600">
+              <div className="p-4 sm:p-6 md:p-8 w-full md:w-auto">
+                <form onSubmit={sendEmail} className="flex flex-col gap-4">
+                <div className="flex flex-col sm:flex-row gap-4">
+                <input type="text" name="name" placeholder="Enter your Full Name" className="border p-3 rounded-2xl w-full sm:w-64 hover:border-red-600">
                </input>
-                <input type="number" name="phone" placeholder="Enter your Phone number"className=" border  w-64 p-3 rounded-2xl hover:border-red-600"></input>
+                <input type="number" name="phone" placeholder="Enter your Phone number" className="border w-full sm:w-64 p-3 rounded-2xl hover:border-red-600"></input>
                 </div>
 
-                <div className=" p-3">
-                 <input type="text" name="email" placeholder="Enter your Email" className=" border  w-135 p-3 rounded-2xl m-2 hover:border-red-600"></input>
-                 <textarea name="message" placeholder="Type your message here..." className=" border  w-135 p-3 rounded-2xl m-2 h-64 resize-none hover:border-red-600"></textarea>
+                <div className="flex flex-col gap-3">
+                 <input type="text" name="email" placeholder="Enter your Email" className="border w-full p-3 rounded-2xl hover:border-red-600"></input>
+                 <textarea name="message" placeholder="Type your message here..." className="border w-full p-3 rounded-2xl h-40 sm:h-64 resize-none hover:border-red-600"></textarea>
                   
-                  <button type="submit" className={`border border-red-600 p-3 w-full rounded-3xl text-white ${loading ? "bg-gray-400" : "bg-red-600"}`} disabled={loading}>
+                  <button type="submit" className={`border border-red-600 p-3 w-full rounded-3xl text-white text-sm sm:text-base ${loading ? "bg-gray-400" : "bg-red-600"}`} disabled={loading}>
                 {loading ? "Sending..." : "Submit Appointment"}
               </button>
               </div>

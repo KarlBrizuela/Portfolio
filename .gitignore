@@ -35,7 +35,7 @@ yarn-error.log*
 .env
 .env.local
 .route.js
-.gitignore
+
 # vercel
 .vercel
 

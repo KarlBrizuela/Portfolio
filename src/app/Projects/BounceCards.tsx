@@ -1,4 +1,5 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import * as React from 'react';
 import { gsap } from 'gsap';
 
 interface BounceCardsProps {
@@ -31,6 +32,34 @@ export default function BounceCards({
   enableHover = false
 }: BounceCardsProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+  
+  // Responsive dimensions
+  const getResponsiveDimensions = () => {
+    if (typeof window === 'undefined') return { width: containerWidth, height: containerHeight };
+    
+    const width = window.innerWidth;
+    if (width < 640) {
+      // Mobile
+      return { width: 280, height: 320, cardSize: 200 };
+    } else if (width < 1024) {
+      // Tablet
+      return { width: 600, height: 380, cardSize: 260 };
+    } else {
+      // Desktop
+      return { width: 1400, height: 450, cardSize: 320 };
+    }
+  };
+
+  const [dimensions, setDimensions] = React.useState(() => getResponsiveDimensions());
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setDimensions(getResponsiveDimensions());
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
@@ -124,17 +153,20 @@ export default function BounceCards({
       className={`relative flex items-center justify-center overflow-visible ${className}`}
       ref={containerRef}
       style={{
-        width: containerWidth,
-        height: containerHeight,
+        width: dimensions.width,
+        height: dimensions.height,
         perspective: '1200px',
-        transformStyle: 'preserve-3d' as any
+        transformStyle: 'preserve-3d' as any,
+        maxWidth: '100%'
       }}
     >
       {images.map((src, idx) => (
         <div
           key={idx}
-          className={`card card-${idx} absolute w-[320px] aspect-square border-8 border-white rounded-[30px] overflow-hidden`}
+          className={`card card-${idx} absolute aspect-square border-4 sm:border-6 md:border-8 border-white rounded-[20px] sm:rounded-[25px] md:rounded-[30px] overflow-hidden`}
           style={{
+            width: dimensions.cardSize,
+            height: dimensions.cardSize,
             boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
             transform: transformStyles[idx] || 'none'
           }}
