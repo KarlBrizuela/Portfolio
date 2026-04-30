@@ -34,6 +34,7 @@ export default function Home() {
 
   return (
     <>
+    <meta name="google-site-verification" content="BimiADAN08O4Ye7U7qcxvjg3ctBmRUmyVXf40FfuIzE" />
       <Navbar />
 
       <div id="home" className=" min-h-screen w-full p-4 sm:p-6 md:p-8 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-4 lg:gap-20">
