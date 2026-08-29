@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import About from "./About/about";
 import Skills from "./Skills/skills";
 import Projects from "./Projects/projects";
+import Chatbot from "./aichatbot/chatbot";
 
 import Contact from "./Contact/contact";
 import { Facebook, Instagram, Github, Linkedin, Images } from "lucide-react";
@@ -109,8 +110,15 @@ export default function Home() {
 
         </div>
 
-        <div data-aos="fade-left" className=" hidden md:flex flex-1 justify-center w-full md:w-auto mt-6 md:mt-0">
-          <Image src="/karl.png" width={300} height={400} alt="Karl Christian Brizuela" className="rounded-4xl object-cover shadow-lg border-8 border-red-600 w-48 h-64 sm:w-64 sm:h-80 md:w-80 md:h-full"/>
+        <div data-aos="fade-left" className="flex justify-center items-center w-full md:w-auto mt-8 md:mt-0 shrink-0">
+          <Image
+            src="/karl.png"
+            width={320}
+            height={420}
+            alt="Karl Christian Brizuela"
+            className="rounded-4xl object-cover shadow-lg border-4 sm:border-8 border-red-600 w-52 h-64 sm:w-64 sm:h-80 md:w-72 md:h-96 lg:w-80 lg:h-[420px] max-w-full"
+            priority
+          />
         </div>
         
       </div>
@@ -134,8 +142,10 @@ export default function Home() {
       <section id="contact">
         <Contact/>
       </section>
-
-    
+  
+    <section id="chatbot">
+      <Chatbot />
+    </section>
     </>
   );
 }

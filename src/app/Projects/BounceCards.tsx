@@ -35,37 +35,42 @@ export default function BounceCards({
 }: BounceCardsProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isMounted, setIsMounted] = React.useState(false);
-  
-  // Responsive dimensions
-  const getResponsiveDimensions = () => {
-    if (typeof window === 'undefined') return { width: containerWidth, height: containerHeight, cardSize: 240 };
-    
-    const width = window.innerWidth;
-    if (width < 640) {
-      // Mobile
-      return { width: 280, height: 320, cardSize: 200 };
-    } else if (width < 1024) {
-      // Tablet
-      return { width: 600, height: 380, cardSize: 260 };
-    } else {
-      // Desktop
-      return { width: 1500, height: 350, cardSize: 240 };
-    }
+
+  const fallbackDimensions = {
+    width: containerWidth,
+    height: containerHeight,
+    cardSize: Math.min(240, Math.max(180, containerWidth / 2.1))
   };
 
-  const [dimensions, setDimensions] = React.useState(() => getResponsiveDimensions());
+  // Responsive dimensions
+  const getResponsiveDimensions = () => {
+    if (typeof window === 'undefined') return fallbackDimensions;
+
+    const viewportWidth = window.innerWidth;
+    const safeWidth = Math.min(containerWidth, Math.max(280, viewportWidth - 80));
+
+    if (viewportWidth < 640) {
+      return { width: safeWidth, height: containerHeight, cardSize: 180 };
+    } else if (viewportWidth < 1024) {
+      return { width: safeWidth, height: containerHeight, cardSize: 220 };
+    }
+
+    return { width: safeWidth, height: containerHeight, cardSize: 240 };
+  };
+
+  const [dimensions, setDimensions] = React.useState(fallbackDimensions);
 
   React.useEffect(() => {
     setIsMounted(true);
     setDimensions(getResponsiveDimensions());
-    
+
     const handleResize = () => {
       setDimensions(getResponsiveDimensions());
     };
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  }, [containerWidth, containerHeight]);
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
@@ -154,13 +159,15 @@ export default function BounceCards({
     });
   };
 
+  const displayDimensions = isMounted ? dimensions : fallbackDimensions;
+
   return (
     <div
       className={`relative flex items-center justify-center overflow-visible ${className}`}
       ref={containerRef}
       style={{
-        width: dimensions.width,
-        height: dimensions.height,
+        width: displayDimensions.width,
+        height: displayDimensions.height,
         perspective: '1200px',
         transformStyle: 'preserve-3d' as any,
         maxWidth: '100%'
@@ -171,12 +178,12 @@ export default function BounceCards({
           key={idx}
           className={`card card-${idx} absolute border-4 sm:border-6 md:border-8 border-white rounded-[20px] sm:rounded-[25px] md:rounded-[30px] overflow-hidden flex-shrink-0 cursor-pointer group`}
           style={{
-            width: `${dimensions.cardSize}px`,
-            height: `${dimensions.cardSize}px`,
-            minWidth: `${dimensions.cardSize}px`,
-            minHeight: `${dimensions.cardSize}px`,
-            maxWidth: `${dimensions.cardSize}px`,
-            maxHeight: `${dimensions.cardSize}px`,
+            width: `${displayDimensions.cardSize}px`,
+            height: `${displayDimensions.cardSize}px`,
+            minWidth: `${displayDimensions.cardSize}px`,
+            minHeight: `${displayDimensions.cardSize}px`,
+            maxWidth: `${displayDimensions.cardSize}px`,
+            maxHeight: `${displayDimensions.cardSize}px`,
             boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
             transform: transformStyles[idx] || 'none',
             flexShrink: 0,

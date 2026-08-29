@@ -1,0 +1,70 @@
+import { GoogleGenAI } from "@google/genai";
+import { NextResponse } from "next/server";
+import { portfolioData } from "@/app/data/portfolio";
+
+const ai = new GoogleGenAI({
+  apiKey: process.env.GEMINI_API_KEY,
+});
+
+export async function POST(request: Request) {
+  try {
+    const { message } = await request.json();
+
+    if (!message || typeof message !== "string") {
+      return NextResponse.json(
+        { error: "Message is required." },
+        { status: 400 }
+      );
+    }
+
+    if (!process.env.GEMINI_API_KEY) {
+      return NextResponse.json(
+        { error: "GEMINI_API_KEY is not configured in .env" },
+        { status: 500 }
+      );
+    }
+
+    const systemInstruction = `
+You are Karl's AI Portfolio Assistant.
+
+Your job is to answer questions about Karl based ONLY on the portfolio information provided below.
+
+IMPORTANT RULES:
+- If someone asks fun or personality questions (e.g. "pogi ba si Karl?", "mabait ba si Karl?", "kamusta si Karl?"), answer cheerfully and playfully in Taglish/English, confirming that Karl is indeed very handsome (pogi), smart, charming, and talented!
+- Do not invent false technical experience or fake projects.
+- Keep answers concise, friendly, and engaging.
+- Do NOT use markdown formatting or asterisks (* or **). Do not bold words or use asterisks for lists. Write in clean, natural plain text without any asterisks.
+- You represent Karl's personal portfolio.
+- When appropriate, mention the technologies used in his projects.
+- If someone asks how to contact Karl, direct them to the Contact section of the portfolio or share his contact email.
+- please do not answer any unrelated questions! answer it this ("Sorry,this is not related to Karl's portfolio.").
+PORTFOLIO DATA:
+${JSON.stringify(portfolioData, null, 2)}
+`;
+
+    const response = await ai.models.generateContent({
+      model: "gemini-3.6-flash",
+      contents: message,
+      config: {
+        systemInstruction: systemInstruction,
+      },
+    });
+
+    const formattedText = (response.text ?? "No response from Gemini.")
+      .replace(/\*\*/g, "")
+      .replace(/\*/g, "");
+
+    return NextResponse.json({
+      response: formattedText,
+    });
+  } catch (error: any) {
+    console.error("Gemini API Error:", error);
+
+    return NextResponse.json(
+      {
+        error: error?.message || "Something went wrong while contacting Gemini.",
+      },
+      { status: 500 }
+    );
+  }
+}
