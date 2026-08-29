@@ -36,7 +36,52 @@ function checkRateLimit(ip: string): boolean {
   return true;
 }
 
+// Regex Pattern Fallback Engine when Gemini API quota/token runs out
+function getFallbackResponse(userMessage: string): string {
+  const query = userMessage.toLowerCase();
+
+  // Contact / Socials
+  if (/contact|email|phone|number|fb|facebook|ig|instagram|linkedin|github|reach|talk|tawag|sulat|social/i.test(query)) {
+    return `Maaari mong kontakin si Karl via Email: ${portfolioData.contact.emails.join(" | ")} o Phone: ${portfolioData.contact.phone.join(" / ")}. Pwede mo rin siyang bisitahin sa Facebook (${portfolioData.contact.socials.facebook}) o Instagram (${portfolioData.contact.socials.instagram}).`;
+  }
+
+  // Pogi / Personality / Looks
+  if (/pogi|gwapo|handsome|charming|looks|artista|joshua|mabait|ganda/i.test(query)) {
+    return `Sobrang pogi ni Karl! ${portfolioData.personality.looks} 100% Pogi at talented Full Stack Developer!`;
+  }
+
+  // Girlfriend / Status
+  if (/girlfriend|gf|syota|kasintahan|jowa|love|gel|partner/i.test(query)) {
+    return `Ang girlfriend ni Karl ay si ${portfolioData.girlfriend}.`;
+  }
+
+  // Skills / Tech stack
+  if (/skill|tech|stack|language|framework|laravel|react|next|javascript|css|html|programming|code/i.test(query)) {
+    return `Ang mga tech skills ni Karl ay: ${portfolioData.skills.techStack.join(", ")}. Soft skills: ${portfolioData.skills.softSkills.join(", ")}.`;
+  }
+
+  // Projects / Apps
+  if (/project|gawa|system|app|website|work|portfolio/i.test(query)) {
+    return `Ilan sa mga nakabuo at kilalang projects ni Karl ay: ${portfolioData.projects.join(", ")}.`;
+  }
+
+  // Education / School
+  if (/school|university|course|study|degree|student|education|caloocan|aaral|bs/i.test(query)) {
+    return `Si Karl ay nag-aaral sa ${portfolioData.education.school} sa kursong ${portfolioData.education.course}.`;
+  }
+
+  // Experience / Job / Company
+  if (/experience|job|work|company|intracode|developer|position|trabaho|karanasan/i.test(query)) {
+    return `Si Karl ay kasalukuyang nagtatrabaho bilang ${portfolioData.experience.position} sa ${portfolioData.experience.company} (${portfolioData.experience.years}).`;
+  }
+
+  // Default fallback when API is rate limited
+  return `Hi! Ako ang AI Assistant ni Karl. Si Karl Christian Magno Brizuela ay isang Full Stack Developer, Freelancer, at Project Manager. Pwede mo akong tanungin tungkol sa kanyang skills, projects, o contact details!`;
+}
+
 export async function POST(request: Request) {
+  let message = "";
+
   try {
     // Extract visitor IP address
     const forwardedFor = request.headers.get("x-forwarded-for");
@@ -44,7 +89,7 @@ export async function POST(request: Request) {
       ? forwardedFor.split(",")[0].trim()
       : request.headers.get("x-real-ip") || "127.0.0.1";
 
-    // Rate Limit Check
+    // Rate Limit Check per visitor IP
     if (!checkRateLimit(clientIp)) {
       return NextResponse.json(
         {
@@ -54,22 +99,21 @@ export async function POST(request: Request) {
       );
     }
 
-    const apiKey = process.env.GEMINI_API_KEY;
-
-    if (!apiKey) {
-      return NextResponse.json(
-        { error: "GEMINI_API_KEY is not configured in .env" },
-        { status: 500 }
-      );
-    }
-
-    const { message } = await request.json();
+    const body = await request.json();
+    message = body.message || "";
 
     if (!message || typeof message !== "string") {
       return NextResponse.json(
         { error: "Message is required." },
         { status: 400 }
       );
+    }
+
+    const apiKey = process.env.GEMINI_API_KEY;
+
+    if (!apiKey) {
+      const fallback = getFallbackResponse(message);
+      return NextResponse.json({ response: fallback });
     }
 
     const ai = new GoogleGenAI({
@@ -112,17 +156,8 @@ ${JSON.stringify(portfolioData, null, 2)}
   } catch (error: any) {
     console.error("Gemini API Error:", error);
 
-    let userFriendlyMessage = error?.message || "Something went wrong while contacting Gemini.";
-
-    if (typeof userFriendlyMessage === "string" && (userFriendlyMessage.includes("429") || userFriendlyMessage.includes("Quota exceeded"))) {
-      userFriendlyMessage = "Mahina pa tayo, boss. Wala. Chat mo ’ko ulit mamaya, balik ka mga 1 hour. Libre lang ’to eh. Hampaslupa pa si boss  Kaya pagawa kana ng system para may pang-avail na siya. ";
-    }
-
-    return NextResponse.json(
-      {
-        error: userFriendlyMessage,
-      },
-      { status: 500 }
-    );
+    // Fallback to local Regex Pattern engine if Gemini API hits quota error (429) or fails
+    const fallbackText = getFallbackResponse(message);
+    return NextResponse.json({ response: fallbackText });
   }
 }
