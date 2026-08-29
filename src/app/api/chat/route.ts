@@ -2,6 +2,8 @@ import { GoogleGenAI } from "@google/genai";
 import { NextResponse } from "next/server";
 import { portfolioData } from "@/app/data/portfolio";
 
+export const dynamic = "force-dynamic";
+
 // Rate Limiter Configuration: Max 10 messages per 1 minute (60,000ms) per IP address
 const RATE_LIMIT_WINDOW_MS = 60 * 1000;
 const MAX_REQUESTS_PER_WINDOW = 10;
