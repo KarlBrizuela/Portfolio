@@ -6,8 +6,56 @@ const ai = new GoogleGenAI({
   apiKey: process.env.GEMINI_API_KEY,
 });
 
+// Rate Limiter Configuration: Max 10 messages per 1 minute (60,000ms) per IP address
+const RATE_LIMIT_WINDOW_MS = 60 * 1000;
+const MAX_REQUESTS_PER_WINDOW = 10;
+
+const rateLimitMap = new Map<string, number[]>();
+
+function checkRateLimit(ip: string): boolean {
+  const now = Date.now();
+  const windowStart = now - RATE_LIMIT_WINDOW_MS;
+
+  const timestamps = rateLimitMap.get(ip) || [];
+  const validTimestamps = timestamps.filter((t) => t > windowStart);
+
+  if (validTimestamps.length >= MAX_REQUESTS_PER_WINDOW) {
+    return false;
+  }
+
+  validTimestamps.push(now);
+  rateLimitMap.set(ip, validTimestamps);
+
+  // Clean up stale entries to prevent memory leaks
+  if (rateLimitMap.size > 1000) {
+    for (const [key, times] of rateLimitMap.entries()) {
+      if (times.every((t) => t <= windowStart)) {
+        rateLimitMap.delete(key);
+      }
+    }
+  }
+
+  return true;
+}
+
 export async function POST(request: Request) {
   try {
+    // Extract visitor IP address
+    const forwardedFor = request.headers.get("x-forwarded-for");
+    const clientIp = forwardedFor
+      ? forwardedFor.split(",")[0].trim()
+      : request.headers.get("x-real-ip") || "127.0.0.1";
+
+    // Rate Limit Check
+    if (!checkRateLimit(clientIp)) {
+      return NextResponse.json(
+        {
+          error: "Too many messages! You have reached the rate limit. Please wait 1 minute before sending another message.",
+        },
+        { status: 429 }
+      );
+    }
+
     const { message } = await request.json();
 
     if (!message || typeof message !== "string") {
@@ -60,9 +108,15 @@ ${JSON.stringify(portfolioData, null, 2)}
   } catch (error: any) {
     console.error("Gemini API Error:", error);
 
+    let userFriendlyMessage = error?.message || "Something went wrong while contacting Gemini.";
+
+    if (typeof userFriendlyMessage === "string" && (userFriendlyMessage.includes("429") || userFriendlyMessage.includes("Quota exceeded"))) {
+      userFriendlyMessage = "Mahina pa tayo, boss. Wala. Chat mo ’ko ulit mamaya, balik ka mga 1 hour. Libre lang ’to eh. Hampaslupa pa si boss  Kaya pagawa kana ng system para may pang-avail na siya. ";
+    }
+
     return NextResponse.json(
       {
-        error: error?.message || "Something went wrong while contacting Gemini.",
+        error: userFriendlyMessage,
       },
       { status: 500 }
     );
