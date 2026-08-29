@@ -2,10 +2,6 @@ import { GoogleGenAI } from "@google/genai";
 import { NextResponse } from "next/server";
 import { portfolioData } from "@/app/data/portfolio";
 
-const ai = new GoogleGenAI({
-  apiKey: process.env.GEMINI_API_KEY,
-});
-
 // Rate Limiter Configuration: Max 10 messages per 1 minute (60,000ms) per IP address
 const RATE_LIMIT_WINDOW_MS = 60 * 1000;
 const MAX_REQUESTS_PER_WINDOW = 10;
@@ -56,6 +52,15 @@ export async function POST(request: Request) {
       );
     }
 
+    const apiKey = process.env.GEMINI_API_KEY;
+
+    if (!apiKey) {
+      return NextResponse.json(
+        { error: "GEMINI_API_KEY is not configured in .env" },
+        { status: 500 }
+      );
+    }
+
     const { message } = await request.json();
 
     if (!message || typeof message !== "string") {
@@ -65,12 +70,9 @@ export async function POST(request: Request) {
       );
     }
 
-    if (!process.env.GEMINI_API_KEY) {
-      return NextResponse.json(
-        { error: "GEMINI_API_KEY is not configured in .env" },
-        { status: 500 }
-      );
-    }
+    const ai = new GoogleGenAI({
+      apiKey: apiKey,
+    });
 
     const systemInstruction = `
 You are Karl's AI Portfolio Assistant.
