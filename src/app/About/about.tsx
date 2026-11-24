@@ -28,9 +28,9 @@ export default function About() {
 
          
           <div   data-aos="fade-left"    className="text-center lg:text-left flex-1 p-2 sm:p-4 lg:p-6"  >
-            <h2 className="text-lg sm:text-2xl lg:text-3xl font-bold mb-4">I'm Karl Christian M. Brizuela</h2>
+            <h2 className="text-lg sm:text-2xl lg:text-3xl font-bold mb-4">I&apos;m Karl Christian M. Brizuela</h2>
             <p className="text-xs sm:text-base leading-relaxed">
-              I'm working as a Full stack Developer. I'm still learning and exploring new technologies to enhance my skills and knowledge in the field of software development. 
+              I&apos;m working as a Full stack Developer. I&apos;m still learning and exploring new technologies to enhance my skills and knowledge in the field of software development. 
             </p>
             <ul className="p-2 sm:p-4 lg:p-5 gap-3 sm:gap-4 lg:gap-5 flex flex-col text-xs sm:text-base">
               <li className="flex gap-3 items-center">
@@ -59,7 +59,7 @@ export default function About() {
               </li>
             </ul>
               
-               <p className="text-xs sm:text-sm lg:text-base text-center lg:text-left">" I can do all things through God who strengthens me. "
+               <p className="text-xs sm:text-sm lg:text-base text-center lg:text-left">&ldquo; I can do all things through God who strengthens me. &rdquo;
                 <span className="block text-center lg:text-left"> - Philippians 4:13</span>
                </p>
 

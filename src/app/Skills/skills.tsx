@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import {  ShieldCheck, Briefcase,BarChart3, Lightbulb, MessageCircle, Users, }from "lucide-react";
-import AOS from "aos";
 export default function Skills() {
 
     const skills = [

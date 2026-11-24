@@ -1,8 +1,8 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
-import { X, Layers, CheckCircle2, Sparkles, Images, ChevronLeft, ChevronRight, LayoutGrid, ChevronDown, ChevronUp, ArrowUpRight } from "lucide-react";
+import { useEffect, useState, useSyncExternalStore } from "react";
+import { X, Layers, CheckCircle2, Images, ChevronLeft, ChevronRight, LayoutGrid, ArrowUpRight } from "lucide-react";
 import Carousel, { CarouselEntry, CarouselItem } from "./Carousel";
 
 export interface ProjectDetail {
@@ -69,8 +69,8 @@ const projectsData: ProjectDetail[] = [
     image: "/amoure.png",
     gallery: [
       "/amoure.png",
-      "/amoure.png",
-      "/amoure.png"
+      "/amoure1.png",
+      "/amoure2.png"
     ],
     alt: "Amoure Project",
     techStack: ["Laravel", "Php", "Bootstrap CSS"],
@@ -84,49 +84,50 @@ const projectsData: ProjectDetail[] = [
   {
     id: 4,
     title: "Maxtel",
-    category: "Telecommunications Enterprise Portal",
+    category: "Work Project",
     description:
-      "Enterprise client portal and service management system for telecommunications, providing billing overviews, account management, and network service inquiries.",
+      "payroll System for employee working in the company that include the salary, overtime pay, loan, and etc.",
     image: "/Maxtel.png",
     gallery: [
       "/Maxtel.png",
-      "/Maxtel.png",
-      "/Maxtel.png"
+      "/Maxtel3.png",
+      "/Maxtel2.png"
     ],
     alt: "Maxtel Project",
-    techStack: ["Laravel", "MySQL", "Tailwind CSS", "Full Stack"],
+    techStack: ["Laravel", "Php", "Bootstrap CSS"],
     features: [
-      "Client account portal with real-time balance and service plan view",
-      "Automated billing history and downloadable PDF invoice generator",
-      "Customer support ticket management and status updates",
-      "Robust role-based admin dashboard and analytics"
+      "Role: Full Stack Developer",
+      "AImplimenting NTE,Disciplinary Action,List Of Accountablitities, Personnel Action Form",
+      "Do a manual testing and testing Using Php artisan test",
+      "Collaborate with the team to identify and fix bugs and issues",
+      "Make sure the system is secure and reliable"
     ]
   },
   {
     id: 5,
-    title: "MRF Management",
-    category: "Waste Recovery & Facility Management",
+    title: "Ultra Mrf",
+    category: "Work Project",
     description:
-      "Material Recovery Facility operations management system that tracks waste intake, recyclable segregation, inventory statistics, and ecological reporting.",
+      "HRIS System for employee working in the company that include the salary, overtime pay, loan, and etc.",
     image: "/mrf.png",
     gallery: [
       "/mrf.png",
-      "/mrf.png",
+      "/mrf1.png",
       "/mrf.png"
     ],
     alt: "MRF Management Project",
-    techStack: ["React.js", "Node.js", "Tailwind CSS", "Database"],
+    techStack: ["Laravel", "Php", "Bootstrap CSS"],
     features: [
-      "Daily waste intake and segregation weight recording",
-      "Real-time recyclable material inventory tracking",
-      "Ecological metrics and diversion rate visual charts",
-      "Automated compliance and administrative reporting"
+      "Role: Full Stack Developer",
+      "Executed automated tests using Laravel's php artisan test command to validate application logic and detect potential regressions",
+      "Handled frontend and backend development, including database integration and business logic implementation",
+      "Collaborate to other programmer"
     ]
   },
   {
     id: 6,
     title: "Multitop",
-    category: "Commercial Sales & Logistics",
+    category: "Work Project",
     description:
       "A corporate distribution and inventory management portal featuring secure employee sign-in, product logistics tracking, and enterprise-grade security.",
     image: "/multitop.png",
@@ -232,15 +233,15 @@ const projectsData: ProjectDetail[] = [
 
 export default function Projects() {
   const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  );
   const [selectedProject, setSelectedProject] = useState<ProjectDetail | null>(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [isAllProjectsOpen, setIsAllProjectsOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("All");
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   // Close modal on Escape key press and prevent body scroll when open
   useEffect(() => {

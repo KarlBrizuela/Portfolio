@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { useState, FormEvent } from "react";
 
 export default function Testimonials() {
@@ -41,9 +40,9 @@ export default function Testimonials() {
 
              <div className="flex flex-col lg:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-8 mx-auto border p-3 sm:p-6 lg:p-8 max-w-7xl h-auto rounded-4xl hover:border-red-600">
                 <div className="p-3 sm:p-6 lg:p-8 w-full lg:w-auto">
-             <h3 className="text-red-600 text-lg sm:text-2xl text-start font-medium p-2 lg:p-3">Get in touch</h3>
-              <h1 className="text-xl sm:text-3xl lg:text-4xl p-1 font-semibold text-start">Let's discuss something cool together</h1>
-                <p className="p-2 lg:p-3 text-xs sm:text-base leading-relaxed">I'm open to new opportunities and collaborations. Whether you have a project in mind, need assistance, or just want to say hello, feel free to reach out. Let's connect and explore how we can work together to create something amazing!</p>
+              <h3 className="text-red-600 text-lg sm:text-2xl text-start font-medium p-2 lg:p-3">Get in touch</h3>
+              <h1 className="text-xl sm:text-3xl lg:text-4xl p-1 font-semibold text-start">Let&apos;s discuss something cool together</h1>
+                <p className="p-2 lg:p-3 text-xs sm:text-base leading-relaxed">I&apos;m open to new opportunities and collaborations. Whether you have a project in mind, need assistance, or just want to say hello, feel free to reach out. Let&apos;s connect and explore how we can work together to create something amazing!</p>
               </div>
 
               <div className="p-3 sm:p-6 lg:p-8 w-full lg:w-auto">

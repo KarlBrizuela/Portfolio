@@ -153,7 +153,7 @@ ${JSON.stringify(portfolioData, null, 2)}
     return NextResponse.json({
       response: formattedText,
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Gemini API Error:", error);
 
     // Fallback to local Regex Pattern engine if Gemini API hits quota error (429) or fails

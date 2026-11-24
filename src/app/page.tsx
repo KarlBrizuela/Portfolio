@@ -5,17 +5,16 @@ import Navbar from "./components/Navbar";
 import TextType from "./components/texttype";
 import AOS from "aos";                    
 import "aos/dist/aos.css";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import About from "./About/about";
 import Skills from "./Skills/skills";
 import Projects from "./Projects/projects";
 import Chatbot from "./aichatbot/chatbot";
 
 import Contact from "./Contact/contact";
-import { Facebook, Instagram, Github, Linkedin, Images } from "lucide-react";
+import { Facebook, Instagram, Github, Linkedin } from "lucide-react";
 
 export default function Home() {
-   const [isOpen, setIsOpen] = useState(false);
 
    useEffect(() => {
     AOS.init({
@@ -26,12 +25,12 @@ export default function Home() {
   }, []);
 
   const handleSmoothScroll = (targetID: string) => {
-    const targetElement = document.getElementById(targetID);
+    const normalizedId = targetID === 'contacts' ? 'contact' : targetID;
+    const targetElement = document.getElementById(normalizedId) || document.getElementById(targetID);
     if (targetElement) {
       targetElement.scrollIntoView({ behavior: 'smooth' });
-      setIsOpen(false); // Close mobile menu
     }
-  }
+  };
 
   return (
     <>

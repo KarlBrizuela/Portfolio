@@ -94,7 +94,7 @@ export default function Chatbot() {
           content: data.response,
         },
       ]);
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error(error);
 
       setMessages((prev) => [
@@ -102,7 +102,7 @@ export default function Chatbot() {
         {
           role: "assistant",
           content:
-            error?.message ||
+            (error instanceof Error ? error.message : null) ||
             "Sorry, I couldn't connect to Gemini right now. Please try again.",
         },
       ]);
