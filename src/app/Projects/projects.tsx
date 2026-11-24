@@ -129,104 +129,105 @@ const projectsData: ProjectDetail[] = [
     title: "Multitop",
     category: "Work Project",
     description:
-      "A corporate distribution and inventory management portal featuring secure employee sign-in, product logistics tracking, and enterprise-grade security.",
+      "A web-based Enterprise Resource Planning (ERP) system designed to streamline and centralize business operations, including sales transactions, inventory monitoring, delivery coordination, employee administration, and product management",
     image: "/multitop.png",
     gallery: [
       "/multitop.png",
-      "/multitop.png",
-      "/multitop.png"
+      "/multitop1.png",
+      "/multitop2.png"
     ],
     alt: "Multitop Project",
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Enterprise API"],
+    techStack: ["Laravel", "Php", "Bootstrap CSS"],
     features: [
-      "Secure authenticated portal for internal distribution personnel",
-      "Inventory tracking with real-time warehouse stock updates",
-      "Commercial purchase order processing and status monitors",
-      "Audit trail logging for all sensitive inventory actions"
+      "Role: Full Stack Developer",
+      "Contributed to the end-to-end development and implementation of the ERP system",
+      "Conducted manual testing and debugging to ensure system functionality and reliability ",
+      "Collaborated with fellow Full Stack Developer in developing, integrating, and maintaining system modules."
     ]
   },
   {
     id: 7,
     title: "Powerlug",
-    category: "Industrial Hardware & Supply Distribution",
+    category: "Work Project",
     description:
-      "An industrial equipment and hardware parts distribution portal enabling quick supply queries, product specifications, and client order requests.",
+      " web-based Car Insurance Management System designed to streamline insurance operations, including insurance provider management, policy administration, claim filing, and claims processing.",
     image: "/powerlug.png",
     gallery: [
       "/powerlug.png",
-      "/powerlug.png",
-      "/powerlug.png"
+      "/powerlug1.png",
+      "/powerlug2.png"
     ],
     alt: "Powerlug Project",
     techStack: ["Laravel", "Php", "Bootstrap CSS"],
     features: [
-      "Comprehensive parts catalog with detailed technical datasheets",
-      "Bulk order quotation and direct procurement inquiry workflow",
-      "Search-optimized categorization for electrical and heavy hardware",
-      "Responsive layout optimized for procurement agents in the field"
+      "Role: Full Stack Developer",
+      "Collaborated with team members to implement project requirements and improve system functionality",
+      "Conducted manual testing, debugging, and system validation.",
+      "Played a major role in the end-to-end development and implementation of the system"
     ]
   },
   {
     id: 8,
     title: "Imajica",
-    category: "Creative Photography Studio & Portfolio",
+    category: "Work Project",
     description:
-      "Creative photography studio portfolio and online booking system, showcasing professional gallery albums and photoshoot schedule reservations.",
-    image: "/imajica.png",
+      "A web-based Aesthetic Clinic Booking Management System designed to streamline appointment scheduling, client management, treatment reservations, and clinic operations",
+    image: "/imajica3.png",
     gallery: [
-      "/imajica.png",
-      "/imajica.png",
-      "/imajica.png"
+      "/imajica3.png",
+      "/imajica1.png",
+      "/imajica2.png"
     ],
     alt: "Imajica Project",
-    techStack: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
+    techStack: ["Laravel", "Php", "Bootsrap CSS"],
     features: [
-      "Stunning full-screen photo album collections and client galleries",
-      "Interactive photoshoot booking form with time-slot selection",
-      "Studio services breakdown and transparent package pricing",
-      "Client testimonial showcase and social media integration"
+      "Role: Full Stack Developer",
+      "Contributed to the development and implementation of system functionalities",
+      "Collaborated with team members to implement requirements and improve system functionality",
+      "Conducted manual testing, debugging, and system validation",
+      "Coordinated directly with clients to gather requirements, discuss system specifications, and provide technical assistance"
     ]
   },
   {
     id: 9,
     title: "Albertos",
-    category: "Fast-Food Ordering & POS Platform",
+    category: "School Project",
     description:
-      "Customer ordering portal and restaurant transaction system, featuring customized pizza selections, order queues, and receipt generations.",
+      "A web-based Resort Booking Management System designed to streamline resort operations, room reservations, guest management, and booking transaction.",
     image: "/albertos.png",
     gallery: [
       "/albertos.png",
-      "/albertos.png",
-      "/albertos.png"
+      "/albertos1.png",
+      "/albertos2.png"
     ],
     alt: "Albertos Project",
-    techStack: ["React.js", "Node.js", "Tailwind CSS", "REST API"],
+    techStack: ["React.js", "Mongodb", "Tailwind CSS"],
     features: [
-      "Interactive menu with pizza crust, size, and topping customization",
-      "Real-time kitchen order queue and preparation status monitor",
-      "Automated transaction receipts and sales summary records",
-      "Smooth mobile layout for quick dine-in or take-out orders"
+      "Role: Project Manager/Full Stack Developer",
+      "Led the development of core system functionalities, including frontend implementation and interactive features",
+      "Collaborated with team members to integrate and improve system functionalities",
+      "Communicated directly with clients to gather requirements, clarify specifications, and discuss project progresss"
     ]
   },
   {
     id: 10,
     title: "Cuisining",
-    category: "Culinary Recipes & Food Community",
+    category: "School Project",
     description:
-      "A dynamic culinary platform for discovering, sharing, and bookmarking gourmet recipes, complete with ingredient checklists and preparation guides.",
-    image: "/Cuisining.png",
+      "An interactive web-based learning platform designed to provide users with engaging cooking tutorials, interactive 3D assets, and an immersive gaming experience powered by Unity",
+    image: "/Cuisining1.png",
     gallery: [
-      "/Cuisining.png",
-      "/Cuisining.png",
-      "/Cuisining.png"
+      "/Cuisining1.png",
+      "/Cuisining2.png",
+      "/Cuisining3.png"
     ],
     alt: "Cuisining Project",
-    techStack: ["Next.js", "React", "Tailwind CSS"],
+    techStack: ["ReactJS", "Mongodb", "Tailwind CSS","Unity"],
     features: [
-      "Categorized global recipes with prep time and difficulty ratings",
-      "Interactive ingredient checklist with serving multiplier calculator",
-      "Step-by-step cooking instruction guide with cooking tips",
-      "Bookmark and favorites collection saved per user session"
+      "Role: Project Manager",
+      "Utilized Jira for task management, sprint planning, issue tracking, and monitoring development progress.",
+      "Followed Agile development practices to organize tasks, manage priorities, and deliver features incrementally.",
+      "Used Git and GitHub for collaborative development, source code management, and version contro"
     ]
   }
 ];
