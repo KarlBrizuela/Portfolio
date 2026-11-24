@@ -201,7 +201,7 @@ const projectsData: ProjectDetail[] = [
       "/albertos2.png"
     ],
     alt: "Albertos Project",
-    techStack: ["React.js", "Mongodb", "Tailwind CSS"],
+    techStack: ["React.js", "Mongodb","MERN Stack", "Tailwind CSS"],
     features: [
       "Role: Project Manager/Full Stack Developer",
       "Led the development of core system functionalities, including frontend implementation and interactive features",
@@ -222,7 +222,7 @@ const projectsData: ProjectDetail[] = [
       "/Cuisining3.png"
     ],
     alt: "Cuisining Project",
-    techStack: ["ReactJS", "Mongodb", "Tailwind CSS","Unity"],
+    techStack: ["ReactJS", "Mongodb", "MERN Stack", "Tailwind CSS","Unity"],
     features: [
       "Role: Project Manager",
       "Utilized Jira for task management, sprint planning, issue tracking, and monitoring development progress.",
