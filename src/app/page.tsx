@@ -48,10 +48,10 @@ export default function Home() {
           </h1>
 
           <span className="flex flex-wrap justify-center md:justify-start font-semibold gap-2 text-1xl sm:text-3xl md:text-4xl mt-4">
-            i am Currently
+            i'm Soon to be a
             <TextType
               className="text-red-600 font-semibold text-2xl sm:text-3xl md:text-4xl"
-              text={["Full Stack Developer","Freelancer","Project Manager", ]}
+              text={["Full Stack Developer","Software Engineer","Project Manager", ]}
               typingSpeed={75}
               pauseDuration={1500}
               showCursor={true}

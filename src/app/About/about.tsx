@@ -30,7 +30,7 @@ export default function About() {
           <div   data-aos="fade-left"    className="text-center lg:text-left flex-1 p-2 sm:p-4 lg:p-6"  >
             <h2 className="text-lg sm:text-2xl lg:text-3xl font-bold mb-4">I'm Karl Christian M. Brizuela</h2>
             <p className="text-xs sm:text-base leading-relaxed">
-              I'm working as a Full stack Developer, I also a 4th year BSCS student. I'm still learning and exploring new technologies to enhance my skills and knowledge in the field of software development. 
+              I'm working as a Full stack Developer. I'm still learning and exploring new technologies to enhance my skills and knowledge in the field of software development. 
             </p>
             <ul className="p-2 sm:p-4 lg:p-5 gap-3 sm:gap-4 lg:gap-5 flex flex-col text-xs sm:text-base">
               <li className="flex gap-3 items-center">
@@ -40,7 +40,7 @@ export default function About() {
 
               <li className="flex gap-3 items-center">
                 <Briefcase className="rounded-xl bg-black dark:bg-white text-white dark:text-black items-center p-1 flex-shrink-0" size={28} />
-                <span>Web Full Stack Developer - Intracode It Solutions</span>
+                <span>Web Full Stack Developer </span>
               </li>
 
               <li className="flex gap-3 items-center">
