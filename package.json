@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "node scripts/setup-portfolio.js",
+    "prebuild": "node scripts/setup-portfolio.js",
+    "pretype-check": "node scripts/setup-portfolio.js",
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/setup-portfolio.js && next build",
     "start": "next start",
     "lint": "eslint",
     "type-check": "tsc --noEmit"
