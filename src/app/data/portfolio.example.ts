@@ -49,6 +49,21 @@ export const portfolioData = {
     ]
   },
   projects: [
-    "Portfolio"
+    "Claretian-ERP (School ERP System)",
+    "Multitop (Commercial Operations ERP)",
+    "Ricement (Wholesale Grain & Supply Chain ERP)",
+    "Maxtel (Corporate Payroll System)",
+    "Bluebonnet - Payroll (Employee Compensation & Tax Payroll)",
+    "Ultra Mrf (HRIS & Payroll System)",
+    "Amoure (Transportation Management & Booking)",
+    "Imajica (Aesthetic Clinic Booking System)",
+    "Albertos (Resort Room & Facility Booking)",
+    "Clearview OB-GYN (Clinic Consultation & Prenatal Booking)",
+    "Dental Combo Studio (Dental Clinic & Treatment Booking)",
+    "IHMP (Integrated Healthcare Management Platform)",
+    "Powerlug (Car Insurance Management System)",
+    "Checkitup (Clinic Management System)",
+    "Ramen System (Restaurant POS & Inventory)",
+    "Cuisining (Interactive 3D Learning Platform)"
   ]
 };

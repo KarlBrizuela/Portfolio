@@ -23,6 +23,7 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    "scripts/**",
     "src/app/Projects/BounceCards.tsx",
   ]),
 ]);

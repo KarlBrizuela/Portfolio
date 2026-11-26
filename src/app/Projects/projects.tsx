@@ -20,214 +20,274 @@ export interface ProjectDetail {
 const projectsData: ProjectDetail[] = [
   {
     id: 1,
+    title: "Claretian-ERP",
+    category: "ERP",
+    description:
+      "A comprehensive School Enterprise Resource Planning (ERP) system designed to centralize academic administration, student information records, enrollment, grade assessment, and tuition financial transactions.",
+    image: "/claretian1.png",
+    gallery: ["/claretian1.png","/claretian2.png","/claretian3.png"],
+    alt: "Claretian-ERP School Enterprise System",
+    techStack: ["Laravel", "PHP", "MySQL", "Bootstrap CSS"],
+    features: [
+      "Role: Full Stack Developer",
+      "Engineered core modules for student enrollment, registrar management, and tuition billing",
+      "Implemented role-based access control (RBAC) for administrators, faculty members, and students",
+      "Conducted automated and manual testing to ensure data integrity and security across academic records"
+    ]
+  },
+  {
+    id: 2,
+    title: "Multitop",
+    category: "ERP",
+    description:
+      "A web-based Enterprise Resource Planning (ERP) system designed to streamline and centralize business operations, including sales transactions, inventory monitoring, delivery coordination, employee administration, and product management.",
+    image: "/multitop.png",
+    gallery: ["/multitop.png", "/multitop1.png", "/multitop2.png"],
+    alt: "Multitop ERP System",
+    techStack: ["Laravel", "PHP", "Bootstrap CSS", "MySQL"],
+    features: [
+      "Role: Full Stack Developer",
+      "Contributed to the end-to-end development and implementation of the ERP system",
+      "Conducted manual testing and debugging to ensure system functionality and reliability",
+      "Collaborated with fellow Full Stack Developers in developing, integrating, and maintaining system modules"
+    ]
+  },
+  {
+    id: 3,
+    title: "Ricement -thesis project",
+    category: "School Project",
+    description:
+      "an IoT-Based Rice Husk Ash Production System with Mobile App Control for Farmer-Driven Sustainable Cement Additive Manufacturing",
+    image: "/ricement.png",
+    gallery: ["/ricement.png","ricement2.png","ricement4.png"],
+    alt: "Ricement Supply Chain ERP",
+    techStack: ["React Native", "Firebase", "Gemini Api", "Esp32"],
+    features: [
+      "Role: Project Manager",
+      "Built grain inventory tracking, sack batching, price tiering, and supplier management modules",
+      "Created sales order processing, delivery dispatch tracking, and financial invoice reporting",
+      "Conducted rigorous testing and performance optimization for high-volume inventory transactions"
+    ]
+  },
+  {
+    id: 4,
+    title: "Maxtel",
+    category: "Payroll",
+    description:
+      "Enterprise payroll system for corporate employees covering net salary computation, overtime calculations, government deductions, employee loans, and personnel action forms.",
+    image: "/Maxtel.png",
+    gallery: ["/Maxtel.png", "/Maxtel3.png", "/Maxtel2.png"],
+    alt: "Maxtel Payroll Project",
+    techStack: ["Laravel", "PHP", "Bootstrap CSS", "MySQL"],
+    features: [
+      "Role: Full Stack Developer",
+      "Implemented NTE, Disciplinary Actions, List of Accountabilities, and Personnel Action Form (PAF)",
+      "Conducted manual testing and unit testing using php artisan test",
+      "Collaborated with the team to identify and resolve bugs, ensuring reliable and secure payroll computations"
+    ]
+  },
+  {
+    id: 5,
+    title: "Bluebonnet - Payroll",
+    category: "Payroll",
+    description:
+      "An enterprise-grade Employee Payroll and Compensation Management System handling salary computation, government deductions (SSS, PhilHealth, Pag-IBIG), attendance logs, overtime, loans, and tax reporting.",
+    image: "/bluebonnet.svg",
+    gallery: ["/bluebonnet.svg"],
+    alt: "Bluebonnet Payroll System",
+    techStack: ["Laravel", "PHP", "MySQL", "Bootstrap CSS"],
+    features: [
+      "Role: Full Stack Developer",
+      "Engineered automated payroll calculations including SSS, PhilHealth, Pag-IBIG, and withholding taxes",
+      "Developed employee loan management, overtime validation, and payslip generation",
+      "Conducted thorough testing with PHPUnit / php artisan test to ensure precision in financial calculations"
+    ]
+  },
+  {
+    id: 6,
+    title: "Ultra Mrf",
+    category: "Payroll",
+    description:
+      "HRIS and Payroll Management System for company personnel that includes automated salary distribution, overtime computation, loan amortization, and employee records.",
+    image: "/mrf.png",
+    gallery: ["/mrf.png", "/mrf1.png"],
+    alt: "Ultra MRF Payroll & HRIS Project",
+    techStack: ["Laravel", "PHP", "Bootstrap CSS", "MySQL"],
+    features: [
+      "Role: Full Stack Developer",
+      "Executed automated tests using Laravel's php artisan test command to validate application logic",
+      "Handled frontend and backend development, including database integration and business logic implementation",
+      "Collaborated with senior engineers to streamline deployment and system security"
+    ]
+  },
+  {
+    id: 7,
+    title: "Amoure",
+    category: "Booking",
+    description:
+      "A web-based Transportation Management and Booking System designed to streamline transport operations, vehicle fleets, trip scheduling, driver assignments, and reservation monitoring.",
+    image: "/amoure.png",
+    gallery: ["/amoure.png", "/amoure1.png", "/amoure2.png"],
+    alt: "Amoure Transport Booking System",
+    techStack: ["Laravel", "PHP", "Bootstrap CSS", "MySQL"],
+    features: [
+      "Role: Full Stack Developer",
+      "Handled frontend and backend development, including database integration and business logic implementation",
+      "Communicated directly with clients to gather requirements, clarify system specifications, and discuss updates",
+      "Executed automated tests using Laravel php artisan test to validate business logic"
+    ]
+  },
+  {
+    id: 8,
+    title: "Imajica",
+    category: "Booking",
+    description:
+      "A web-based Aesthetic Clinic Booking Management System designed to streamline appointment scheduling, client management, treatment reservations, and clinic operations.",
+    image: "/imajica3.png",
+    gallery: ["/imajica3.png", "/imajica1.png", "/imajica2.png"],
+    alt: "Imajica Clinic Booking System",
+    techStack: ["Laravel", "PHP", "Bootstrap CSS", "MySQL"],
+    features: [
+      "Role: Full Stack Developer",
+      "Contributed to the development and implementation of appointment reservation functionalities",
+      "Collaborated with team members to implement requirements and improve system functionality",
+      "Coordinated directly with clients to gather requirements and provide technical assistance"
+    ]
+  },
+  {
+    id: 9,
+    title: "Albertos",
+    category: "Booking",
+    description:
+      "A web-based Resort Booking Management System designed to streamline resort operations, room reservations, guest management, and booking transactions.",
+    image: "/albertos.png",
+    gallery: ["/albertos.png", "/albertos1.png", "/albertos2.png"],
+    alt: "Albertos Resort Booking System",
+    techStack: ["React.js", "MongoDB", "MERN Stack", "Tailwind CSS"],
+    features: [
+      "Role: Project Manager & Full Stack Developer",
+      "Led the development of core system functionalities, including frontend implementation and booking engine",
+      "Collaborated with team members to integrate and improve system functionalities",
+      "Communicated directly with clients to clarify specifications and discuss project progress"
+    ]
+  },
+  {
+    id: 10,
+    title: "Clearview OB-GYN",
+    category: "Booking",
+    description:
+      "A dedicated OB-GYN Clinic Consultation and Appointment Booking System enabling expectant mothers and patients to book prenatal visits, ultrasound schedules, and manage clinical consultations.",
+    image: "/clearview.svg",
+    gallery: ["/clearview.svg"],
+    alt: "Clearview OB-GYN Clinic Booking System",
+    techStack: ["Laravel", "PHP", "MySQL", "Tailwind CSS"],
+    features: [
+      "Role: Full Stack Developer",
+      "Built real-time doctor availability calendar and automated appointment slot booking",
+      "Integrated patient history logs, prenatal appointment trackers, and visit reminders",
+      "Designed responsive client-facing portal and intuitive doctor clinic dashboard"
+    ]
+  },
+  {
+    id: 11,
+    title: "Dental Combo Studio",
+    category: "Booking",
+    description:
+      "A modern Dental Clinic Booking and Treatment Management System facilitating patient reservations, dental service packages, dentist scheduling, and treatment records.",
+    image: "/dentalcombo.svg",
+    gallery: ["/dentalcombo.svg"],
+    alt: "Dental Combo Studio Booking System",
+    techStack: ["React.js", "Laravel", "MySQL", "Tailwind CSS"],
+    features: [
+      "Role: Full Stack Developer",
+      "Developed dental treatment selection, doctor time-slot booking, and instant confirmation system",
+      "Implemented patient dental chart records, appointment histories, and follow-up notices",
+      "Created clean, modern interface designed to maximize client conversion and streamline clinic desk duties"
+    ]
+  },
+  {
+    id: 12,
+    title: "IHMP",
+    category: "Healthcare & Insurance",
+    description:
+      "Integrated Healthcare Management Platform designed to streamline hospital operations, patient records management, clinical consultations, medical inventory, and department workflows.",
+    image: "/ihmp1.png",
+    gallery: ["/ihmp1.png","/ihmp2.png","/ihmp3.png"],
+    alt: "IHMP Healthcare Management Platform",
+    techStack: ["Laravel", "PHP", "MySQL", "Bootstrap CSS"],
+    features: [
+      "Role: Full Stack Developer",
+      "Developed centralized electronic medical records (EMR) and patient admission tracking",
+      "Integrated laboratory request workflows, billing processing, and doctor consultation schedules",
+      "Optimized database queries for fast retrieval of patient histories and diagnostics"
+    ]
+  },
+  {
+    id: 13,
+    title: "Powerlug",
+    category: "Healthcare & Insurance",
+    description:
+      "A web-based Car Insurance Management System designed to streamline insurance operations, including insurance provider management, policy administration, claim filing, and claims processing.",
+    image: "/powerlug.png",
+    gallery: ["/powerlug.png", "/powerlug1.png", "/powerlug2.png"],
+    alt: "Powerlug Insurance Management System",
+    techStack: ["Laravel", "PHP", "Bootstrap CSS", "MySQL"],
+    features: [
+      "Role: Full Stack Developer",
+      "Collaborated with team members to implement project requirements and improve system functionality",
+      "Conducted manual testing, debugging, and system validation",
+      "Played a major role in the end-to-end development and implementation of the system"
+    ]
+  },
+  {
+    id: 14,
     title: "Check it up",
     category: "School Project",
     description:
-      "this is a clinic management System It allows users to schedule appointments, record medical histories, and track ongoing health concerns with ease.",
+      "A clinic management system that allows users to schedule appointments, record medical histories, and track ongoing health concerns with ease.",
     image: "/Checkitup.png",
-    gallery: [
-      "/Checkitup.png",
-      "/checkitup1.png",
-      "/checkitup2.png"
-    ],
-    alt: "Checkitup Project",
-    techStack: ["C#", "Vb.net", "mysql"],
+    gallery: ["/Checkitup.png", "/checkitup1.png", "/checkitup2.png"],
+    alt: "Checkitup Clinic Project",
+    techStack: ["C#", "VB.NET", "MySQL"],
     features: [
-      "Role: Full Stack Developer (team Leader)",
+      "Role: Full Stack Developer (Team Leader)",
       "Developed all core modules and functionalities",
       "Managed system improvements and maintenance",
       "Integrated patient management, appointment scheduling, consultation, billing, and reporting modules"
     ]
   },
   {
-    id: 2,
+    id: 15,
     title: "Ramen System",
     category: "School Project",
     description:
-      "Desktop application point of sales system that can print receipts and manage inventory.",
+      "Desktop application point of sales (POS) system that can print receipts, customize orders, and manage real-time inventory.",
     image: "/Ramen.png",
-    gallery: [
-      "/Ramen.png",
-      "/Ramen1.png",
-      "/Ramen2.png"
-    ],
-    alt: "Ramen Store Project",
-    techStack: ["Java", "Netbeans"],
+    gallery: ["/Ramen.png", "/Ramen1.png", "/Ramen2.png"],
+    alt: "Ramen POS System",
+    techStack: ["Java", "NetBeans", "MySQL"],
     features: [
-      "Team Leader/ lead programmer of our Group",
-      "can customize Ramen",
-      "Customer can rate the sevice",
-      "can printable receipt"
+      "Team Leader / Lead Programmer",
+      "Customizable Ramen toppings and broth selections",
+      "Customer service rating module",
+      "Automated printable receipt generation"
     ]
   },
   {
-    id: 3,
-    title: "Amoure",
-    category: "Work Project",
-    description:
-      "A web-based Transportation Management System designed to streamline transportation operations, vehicle management, trip scheduling, driver assignments, and transportation record monitoring.",
-    image: "/amoure.png",
-    gallery: [
-      "/amoure.png",
-      "/amoure1.png",
-      "/amoure2.png"
-    ],
-    alt: "Amoure Project",
-    techStack: ["Laravel", "Php", "Bootstrap CSS"],
-    features: [
-      "Role: Full Stack Developer",
-      "Handled frontend and backend development, including database integration and business logic implementation",
-      "Communicated directly with clients to gather requirements, clarify system specifications, and discuss project updates",
-      "Executed automated tests using Laravel's php artisan test command to validate application logic and detect potential regressions."
-    ]
-  },
-  {
-    id: 4,
-    title: "Maxtel",
-    category: "Work Project",
-    description:
-      "payroll System for employee working in the company that include the salary, overtime pay, loan, and etc.",
-    image: "/Maxtel.png",
-    gallery: [
-      "/Maxtel.png",
-      "/Maxtel3.png",
-      "/Maxtel2.png"
-    ],
-    alt: "Maxtel Project",
-    techStack: ["Laravel", "Php", "Bootstrap CSS"],
-    features: [
-      "Role: Full Stack Developer",
-      "AImplimenting NTE,Disciplinary Action,List Of Accountablitities, Personnel Action Form",
-      "Do a manual testing and testing Using Php artisan test",
-      "Collaborate with the team to identify and fix bugs and issues",
-      "Make sure the system is secure and reliable"
-    ]
-  },
-  {
-    id: 5,
-    title: "Ultra Mrf",
-    category: "Work Project",
-    description:
-      "HRIS System for employee working in the company that include the salary, overtime pay, loan, and etc.",
-    image: "/mrf.png",
-    gallery: [
-      "/mrf.png",
-      "/mrf1.png",
-      "/mrf.png"
-    ],
-    alt: "MRF Management Project",
-    techStack: ["Laravel", "Php", "Bootstrap CSS"],
-    features: [
-      "Role: Full Stack Developer",
-      "Executed automated tests using Laravel's php artisan test command to validate application logic and detect potential regressions",
-      "Handled frontend and backend development, including database integration and business logic implementation",
-      "Collaborate to other programmer"
-    ]
-  },
-  {
-    id: 6,
-    title: "Multitop",
-    category: "Work Project",
-    description:
-      "A web-based Enterprise Resource Planning (ERP) system designed to streamline and centralize business operations, including sales transactions, inventory monitoring, delivery coordination, employee administration, and product management",
-    image: "/multitop.png",
-    gallery: [
-      "/multitop.png",
-      "/multitop1.png",
-      "/multitop2.png"
-    ],
-    alt: "Multitop Project",
-    techStack: ["Laravel", "Php", "Bootstrap CSS"],
-    features: [
-      "Role: Full Stack Developer",
-      "Contributed to the end-to-end development and implementation of the ERP system",
-      "Conducted manual testing and debugging to ensure system functionality and reliability ",
-      "Collaborated with fellow Full Stack Developer in developing, integrating, and maintaining system modules."
-    ]
-  },
-  {
-    id: 7,
-    title: "Powerlug",
-    category: "Work Project",
-    description:
-      " web-based Car Insurance Management System designed to streamline insurance operations, including insurance provider management, policy administration, claim filing, and claims processing.",
-    image: "/powerlug.png",
-    gallery: [
-      "/powerlug.png",
-      "/powerlug1.png",
-      "/powerlug2.png"
-    ],
-    alt: "Powerlug Project",
-    techStack: ["Laravel", "Php", "Bootstrap CSS"],
-    features: [
-      "Role: Full Stack Developer",
-      "Collaborated with team members to implement project requirements and improve system functionality",
-      "Conducted manual testing, debugging, and system validation.",
-      "Played a major role in the end-to-end development and implementation of the system"
-    ]
-  },
-  {
-    id: 8,
-    title: "Imajica",
-    category: "Work Project",
-    description:
-      "A web-based Aesthetic Clinic Booking Management System designed to streamline appointment scheduling, client management, treatment reservations, and clinic operations",
-    image: "/imajica3.png",
-    gallery: [
-      "/imajica3.png",
-      "/imajica1.png",
-      "/imajica2.png"
-    ],
-    alt: "Imajica Project",
-    techStack: ["Laravel", "Php", "Bootsrap CSS"],
-    features: [
-      "Role: Full Stack Developer",
-      "Contributed to the development and implementation of system functionalities",
-      "Collaborated with team members to implement requirements and improve system functionality",
-      "Conducted manual testing, debugging, and system validation",
-      "Coordinated directly with clients to gather requirements, discuss system specifications, and provide technical assistance"
-    ]
-  },
-  {
-    id: 9,
-    title: "Albertos",
-    category: "School Project",
-    description:
-      "A web-based Resort Booking Management System designed to streamline resort operations, room reservations, guest management, and booking transaction.",
-    image: "/albertos.png",
-    gallery: [
-      "/albertos.png",
-      "/albertos1.png",
-      "/albertos2.png"
-    ],
-    alt: "Albertos Project",
-    techStack: ["React.js", "Mongodb","MERN Stack", "Tailwind CSS"],
-    features: [
-      "Role: Project Manager/Full Stack Developer",
-      "Led the development of core system functionalities, including frontend implementation and interactive features",
-      "Collaborated with team members to integrate and improve system functionalities",
-      "Communicated directly with clients to gather requirements, clarify specifications, and discuss project progresss"
-    ]
-  },
-  {
-    id: 10,
+    id: 16,
     title: "Cuisining",
     category: "School Project",
     description:
-      "An interactive web-based learning platform designed to provide users with engaging cooking tutorials, interactive 3D assets, and an immersive gaming experience powered by Unity",
+      "An interactive web-based learning platform designed to provide users with engaging cooking tutorials, interactive 3D assets, and an immersive gaming experience powered by Unity.",
     image: "/Cuisining1.png",
-    gallery: [
-      "/Cuisining1.png",
-      "/Cuisining2.png",
-      "/Cuisining3.png"
-    ],
-    alt: "Cuisining Project",
-    techStack: ["ReactJS", "Mongodb", "MERN Stack", "Tailwind CSS","Unity"],
+    gallery: ["/Cuisining1.png", "/Cuisining2.png", "/Cuisining3.png"],
+    alt: "Cuisining Learning Platform",
+    techStack: ["React.js", "MongoDB", "MERN Stack", "Tailwind CSS", "Unity"],
     features: [
       "Role: Project Manager",
-      "Utilized Jira for task management, sprint planning, issue tracking, and monitoring development progress.",
-      "Followed Agile development practices to organize tasks, manage priorities, and deliver features incrementally.",
-      "Used Git and GitHub for collaborative development, source code management, and version contro"
+      "Utilized Jira for task management, sprint planning, issue tracking, and development monitoring",
+      "Followed Agile development practices to organize tasks and deliver features incrementally",
+      "Used Git and GitHub for collaborative source code management and version control"
     ]
   }
 ];
@@ -288,7 +348,13 @@ export default function Projects() {
 
   const activeImage = galleryList[selectedImageIndex] || selectedProject?.image || "";
 
-  const categories = ["All", ...Array.from(new Set(projectsData.map((p) => p.category)))];
+  const preferredCategoryOrder = ["All", "ERP", "Payroll", "Booking", "Healthcare & Insurance", "School Project"];
+  const existingCategories = Array.from(new Set(projectsData.map((p) => p.category)));
+  const categories = [
+    "All",
+    ...preferredCategoryOrder.filter((cat) => cat !== "All" && existingCategories.includes(cat)),
+    ...existingCategories.filter((cat) => !preferredCategoryOrder.includes(cat))
+  ];
   const filteredProjects =
     selectedCategory === "All"
       ? projectsData

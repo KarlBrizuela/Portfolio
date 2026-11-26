@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="riceBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#14261d" />
+      <stop offset="100%" stop-color="#05140d" />
+    </linearGradient>
+    <linearGradient id="riceCard" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#0f1f17" stop-opacity="0.9" />
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#riceBg)" />
+
+  <!-- App Window -->
+  <rect x="60" y="50" width="1080" height="700" rx="20" fill="url(#riceCard)" stroke="#1e3a2b" stroke-width="2" />
+  <rect x="60" y="50" width="1080" height="60" rx="20" fill="#0a1510" />
+  <circle cx="95" cy="80" r="7" fill="#ef4444" />
+  <circle cx="120" cy="80" r="7" fill="#f59e0b" />
+  <circle cx="145" cy="80" r="7" fill="#10b981" />
+  <text x="600" y="86" fill="#6ee7b7" font-family="system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle">ricement-erp.system/inventory/grain-supply</text>
+
+  <!-- Sidebar -->
+  <rect x="60" y="110" width="220" height="640" fill="#05140d" opacity="0.6" />
+  <rect x="85" y="140" width="170" height="38" rx="8" fill="url(#emeraldGrad)" />
+  <text x="105" y="164" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13" font-weight="bold">🌾 Grain Supply ERP</text>
+  <text x="105" y="215" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">📦 Warehouse Inventory</text>
+  <text x="105" y="260" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">🚜 Mill Processing</text>
+  <text x="105" y="305" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">🚚 Logistics &amp; Delivery</text>
+  <text x="105" y="350" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">💰 Wholesale Billing</text>
+  <text x="105" y="395" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">📊 Analytics &amp; Reports</text>
+
+  <!-- Content Header -->
+  <g transform="translate(320, 140)">
+    <rect x="0" y="0" width="140" height="26" rx="13" fill="#10b981" opacity="0.2" />
+    <text x="70" y="17" fill="#10b981" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">GRAIN SUPPLY ERP</text>
+    <text x="0" y="65" fill="#ffffff" font-family="system-ui, sans-serif" font-size="34" font-weight="800">Ricement</text>
+    <text x="0" y="95" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="15">Wholesale Rice Inventory, Milling Supply Chain &amp; Logistics ERP</text>
+  </g>
+
+  <!-- KPI Cards -->
+  <g transform="translate(320, 265)">
+    <rect x="0" y="0" width="240" height="110" rx="12" fill="#0f291e" stroke="#1e3a2b" stroke-width="1.5" />
+    <text x="20" y="35" fill="#6ee7b7" font-family="system-ui, sans-serif" font-size="12" font-weight="600">INVENTORY IN STOCK</text>
+    <text x="20" y="75" fill="#ffffff" font-family="system-ui, sans-serif" font-size="28" font-weight="bold">18,450</text>
+    <text x="20" y="95" fill="#a7f3d0" font-family="system-ui, sans-serif" font-size="11" font-weight="600">Sacks (50kg Premium)</text>
+
+    <rect x="260" y="0" width="240" height="110" rx="12" fill="#0f291e" stroke="#1e3a2b" stroke-width="1.5" />
+    <text x="280" y="35" fill="#6ee7b7" font-family="system-ui, sans-serif" font-size="12" font-weight="600">ACTIVE DISPATCHES</text>
+    <text x="280" y="75" fill="#ffffff" font-family="system-ui, sans-serif" font-size="28" font-weight="bold">42 Trucks</text>
+    <text x="280" y="95" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="11" font-weight="600">En route to distributors</text>
+
+    <rect x="520" y="0" width="240" height="110" rx="12" fill="#0f291e" stroke="#1e3a2b" stroke-width="1.5" />
+    <text x="540" y="35" fill="#6ee7b7" font-family="system-ui, sans-serif" font-size="12" font-weight="600">MONTHLY TURNOVER</text>
+    <text x="540" y="75" fill="#ffffff" font-family="system-ui, sans-serif" font-size="28" font-weight="bold">₱12.8M</text>
+    <text x="540" y="95" fill="#10b981" font-family="system-ui, sans-serif" font-size="11" font-weight="600">Wholesale Volume</text>
+  </g>
+
+  <!-- Stock Table -->
+  <g transform="translate(320, 400)">
+    <rect x="0" y="0" width="760" height="300" rx="14" fill="#0a1510" stroke="#1e3a2b" stroke-width="1.5" />
+    <text x="25" y="40" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">Grain Warehousing &amp; Batch Production</text>
+    <rect x="25" y="60" width="710" height="36" rx="6" fill="#12281e" />
+    <text x="45" y="83" fill="#6ee7b7" font-family="system-ui, sans-serif" font-size="12" font-weight="600">BATCH CODE</text>
+    <text x="180" y="83" fill="#6ee7b7" font-family="system-ui, sans-serif" font-size="12" font-weight="600">VARIETY</text>
+    <text x="340" y="83" fill="#6ee7b7" font-family="system-ui, sans-serif" font-size="12" font-weight="600">WAREHOUSE</text>
+    <text x="500" y="83" fill="#6ee7b7" font-family="system-ui, sans-serif" font-size="12" font-weight="600">AVAILABLE</text>
+    <text x="640" y="83" fill="#6ee7b7" font-family="system-ui, sans-serif" font-size="12" font-weight="600">STATUS</text>
+
+    <text x="45" y="125" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">RC-2026-JAS01</text>
+    <text x="180" y="125" fill="#ffffff" font-family="system-ui, sans-serif" font-size="12" font-weight="500">Jasmine Fragrant</text>
+    <text x="340" y="125" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">Silo A - Isabela</text>
+    <text x="500" y="125" fill="#10b981" font-family="system-ui, sans-serif" font-size="12" font-weight="bold">5,200 Sacks</text>
+    <rect x="635" y="112" width="70" height="20" rx="10" fill="#10b981" opacity="0.2" />
+    <text x="670" y="126" fill="#10b981" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">Ready</text>
+
+    <text x="45" y="170" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">RC-2026-DIN04</text>
+    <text x="180" y="170" fill="#ffffff" font-family="system-ui, sans-serif" font-size="12" font-weight="500">Dinorado Special</text>
+    <text x="340" y="170" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">Silo B - Nueva Ecija</text>
+    <text x="500" y="170" fill="#10b981" font-family="system-ui, sans-serif" font-size="12" font-weight="bold">3,800 Sacks</text>
+    <rect x="635" y="157" width="70" height="20" rx="10" fill="#10b981" opacity="0.2" />
+    <text x="670" y="171" fill="#10b981" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">Ready</text>
+  </g>
+</svg>

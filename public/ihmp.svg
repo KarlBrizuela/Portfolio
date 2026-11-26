@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ihmpBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#0e2a3b" />
+      <stop offset="100%" stop-color="#064e3b" />
+    </linearGradient>
+    <linearGradient id="ihmpCard" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#0c232e" stop-opacity="0.95" />
+    </linearGradient>
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0d9488" />
+      <stop offset="100%" stop-color="#14b8a6" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#ihmpBg)" />
+
+  <rect x="60" y="50" width="1080" height="700" rx="20" fill="url(#ihmpCard)" stroke="#0d9488" stroke-width="1.5" />
+  <rect x="60" y="50" width="1080" height="60" rx="20" fill="#061c24" />
+  <circle cx="95" cy="80" r="7" fill="#ef4444" />
+  <circle cx="120" cy="80" r="7" fill="#f59e0b" />
+  <circle cx="145" cy="80" r="7" fill="#10b981" />
+  <text x="600" y="86" fill="#5eead4" font-family="system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle">ihmp-portal.health/emr/consultations</text>
+
+  <!-- Sidebar -->
+  <rect x="60" y="110" width="220" height="640" fill="#041217" opacity="0.7" />
+  <rect x="85" y="140" width="170" height="38" rx="8" fill="url(#tealGrad)" />
+  <text x="105" y="164" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13" font-weight="bold">🏥 Hospital Platform</text>
+  <text x="105" y="215" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">📋 Patient EMR Records</text>
+  <text x="105" y="260" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">🩺 Doctor Schedules</text>
+  <text x="105" y="305" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">🧪 Diagnostic Labs</text>
+  <text x="105" y="350" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">💊 Pharmacy Inventory</text>
+  <text x="105" y="395" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">💳 Insurance &amp; Billing</text>
+
+  <!-- Header -->
+  <g transform="translate(320, 140)">
+    <rect x="0" y="0" width="170" height="26" rx="13" fill="#0d9488" opacity="0.25" />
+    <text x="85" y="17" fill="#2dd4bf" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">HEALTHCARE PLATFORM</text>
+    <text x="0" y="65" fill="#ffffff" font-family="system-ui, sans-serif" font-size="34" font-weight="800">IHMP</text>
+    <text x="0" y="95" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="15">Integrated Healthcare Management Platform for Clinical Workflows &amp; EMR</text>
+  </g>
+
+  <!-- KPI Cards -->
+  <g transform="translate(320, 265)">
+    <rect x="0" y="0" width="240" height="110" rx="12" fill="#082329" stroke="#0f766e" stroke-width="1.5" />
+    <text x="20" y="35" fill="#5eead4" font-family="system-ui, sans-serif" font-size="12" font-weight="600">DAILY PATIENTS</text>
+    <text x="20" y="75" fill="#ffffff" font-family="system-ui, sans-serif" font-size="28" font-weight="bold">384</text>
+    <text x="20" y="95" fill="#10b981" font-family="system-ui, sans-serif" font-size="11" font-weight="600">Outpatient &amp; ER</text>
+
+    <rect x="260" y="0" width="240" height="110" rx="12" fill="#082329" stroke="#0f766e" stroke-width="1.5" />
+    <text x="280" y="35" fill="#5eead4" font-family="system-ui, sans-serif" font-size="12" font-weight="600">ATTENDING CLINICIANS</text>
+    <text x="280" y="75" fill="#ffffff" font-family="system-ui, sans-serif" font-size="28" font-weight="bold">68 Doctors</text>
+    <text x="280" y="95" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="11" font-weight="600">Active Shift Consultation</text>
+
+    <rect x="520" y="0" width="240" height="110" rx="12" fill="#082329" stroke="#0f766e" stroke-width="1.5" />
+    <text x="540" y="35" fill="#5eead4" font-family="system-ui, sans-serif" font-size="12" font-weight="600">BED OCCUPANCY</text>
+    <text x="540" y="75" fill="#ffffff" font-family="system-ui, sans-serif" font-size="28" font-weight="bold">86.2%</text>
+    <text x="540" y="95" fill="#14b8a6" font-family="system-ui, sans-serif" font-size="11" font-weight="600">Inpatient Wards</text>
+  </g>
+
+  <!-- Table -->
+  <g transform="translate(320, 400)">
+    <rect x="0" y="0" width="760" height="300" rx="14" fill="#041217" stroke="#0f766e" stroke-width="1.5" />
+    <text x="25" y="40" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">Clinical Consultations &amp; Medical Triage</text>
+    <rect x="25" y="60" width="710" height="36" rx="6" fill="#0c2f38" />
+    <text x="45" y="83" fill="#5eead4" font-family="system-ui, sans-serif" font-size="12" font-weight="600">PATIENT ID</text>
+    <text x="200" y="83" fill="#5eead4" font-family="system-ui, sans-serif" font-size="12" font-weight="600">NAME</text>
+    <text x="360" y="83" fill="#5eead4" font-family="system-ui, sans-serif" font-size="12" font-weight="600">ATTENDING</text>
+    <text x="510" y="83" fill="#5eead4" font-family="system-ui, sans-serif" font-size="12" font-weight="600">DEPARTMENT</text>
+    <text x="640" y="83" fill="#5eead4" font-family="system-ui, sans-serif" font-size="12" font-weight="600">STATUS</text>
+
+    <text x="45" y="125" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">PX-2026-9021</text>
+    <text x="200" y="125" fill="#ffffff" font-family="system-ui, sans-serif" font-size="12" font-weight="500">Theresa Mendoza</text>
+    <text x="360" y="125" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">Dr. Alcantara</text>
+    <text x="510" y="125" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">Internal Med</text>
+    <rect x="630" y="112" width="75" height="20" rx="10" fill="#10b981" opacity="0.2" />
+    <text x="667" y="126" fill="#10b981" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">Cleared</text>
+  </g>
+</svg>
