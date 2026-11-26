@@ -21,7 +21,7 @@ const projectsData: ProjectDetail[] = [
   {
     id: 1,
     title: "Claretian-ERP",
-    category: "ERP",
+    category: "Work Project",
     description:
       "Developed an Enterprise Resource Planning (ERP) system for Claretian Publications, designed to streamline and manage key business operations across multiple departments. Worked on developing modules for the Accounting Division, Marketing, Production, and User Management.",
     image: "/claretian1.png",
@@ -37,8 +37,8 @@ const projectsData: ProjectDetail[] = [
   },
   {
     id: 2,
-    title: "Multitop",
-    category: "ERP",
+    title: "Multitop - ERP",
+    category: "Work Project",
     description:
       "A web-based Enterprise Resource Planning (ERP) system designed to streamline and centralize business operations, including sales transactions, inventory monitoring, delivery coordination, employee administration, and product management.",
     image: "/multitop.png",
@@ -71,8 +71,8 @@ const projectsData: ProjectDetail[] = [
   },
   {
     id: 4,
-    title: "Maxtel",
-    category: "Payroll",
+    title: "Maxtel - Payroll",
+    category: "Work Project",
     description:
       "Enterprise payroll system for corporate employees covering net salary computation, overtime calculations, government deductions, employee loans, and personnel action forms.",
     image: "/Maxtel.png",
@@ -89,24 +89,24 @@ const projectsData: ProjectDetail[] = [
   {
     id: 5,
     title: "Bluebonnet - Payroll",
-    category: "Payroll",
+    category: "Work Project",
     description:
       "An enterprise-grade Employee Payroll and Compensation Management System handling salary computation, government deductions (SSS, PhilHealth, Pag-IBIG), attendance logs, overtime, loans, and tax reporting.",
-    image: "/bluebonnet.svg",
-    gallery: ["/bluebonnet.svg"],
+    image: "/bluebonnet.png",
+    gallery: ["/bluebonnet.png", "/bluebonnet1.png", "/bluebonnet2.png"],
     alt: "Bluebonnet Payroll System",
     techStack: ["Laravel", "PHP", "MySQL", "Bootstrap CSS"],
     features: [
-      "Role: Full Stack Developer",
-      "Engineered automated payroll calculations including SSS, PhilHealth, Pag-IBIG, and withholding taxes",
-      "Developed employee loan management, overtime validation, and payslip generation",
-      "Conducted thorough testing with PHPUnit / php artisan test to ensure precision in financial calculations"
+      "Role: Quality Assurance",
+      "Participated in client visits, discussed system requirements, and gathered feedback to better understand their needs",
+      " Performed manual system testing, checked system functionality, and cross-checked payroll records to ensure accuracy",
+      "Coordinated with programmers, communicated technical findings, and helped address issues identified during testing"
     ]
   },
   {
     id: 6,
-    title: "Ultra Mrf",
-    category: "Payroll",
+    title: "Ultra Mrf - Payroll",
+    category: "Work Project",
     description:
       "HRIS and Payroll Management System for company personnel that includes automated salary distribution, overtime computation, loan amortization, and employee records.",
     image: "/mrf.png",
@@ -122,8 +122,8 @@ const projectsData: ProjectDetail[] = [
   },
   {
     id: 7,
-    title: "Amoure",
-    category: "Booking",
+    title: "Amoure - Transport Booking",
+    category: "Work Project",
     description:
       "A web-based Transportation Management and Booking System designed to streamline transport operations, vehicle fleets, trip scheduling, driver assignments, and reservation monitoring.",
     image: "/amoure.png",
@@ -139,8 +139,8 @@ const projectsData: ProjectDetail[] = [
   },
   {
     id: 8,
-    title: "Imajica",
-    category: "Booking",
+    title: "Imajica - Aesthetic Clinic Booking",
+    category: "Work Project",
     description:
       "A web-based Aesthetic Clinic Booking Management System designed to streamline appointment scheduling, client management, treatment reservations, and clinic operations.",
     image: "/imajica3.png",
@@ -156,8 +156,8 @@ const projectsData: ProjectDetail[] = [
   },
   {
     id: 9,
-    title: "Albertos",
-    category: "Booking",
+    title: "Albertos - Booking",
+    category: "School Project",
     description:
       "A web-based Resort Booking Management System designed to streamline resort operations, room reservations, guest management, and booking transactions.",
     image: "/albertos.png",
@@ -173,8 +173,8 @@ const projectsData: ProjectDetail[] = [
   },
   {
     id: 10,
-    title: "Clearview OB-GYN",
-    category: "Booking",
+    title: "Clearview OBGYN - Booking",
+    category: "Work Project",
     description:
       "A dedicated OB-GYN Clinic Consultation and Appointment Booking System enabling expectant mothers and patients to book prenatal visits, ultrasound schedules, and manage clinical consultations.",
     image: "/clearview.svg",
@@ -190,12 +190,12 @@ const projectsData: ProjectDetail[] = [
   },
   {
     id: 11,
-    title: "Dental Combo Studio",
-    category: "Booking",
+    title: "Dental Combo Studio - Booking",
+    category: "Work Project",
     description:
       "A modern Dental Clinic Booking and Treatment Management System facilitating patient reservations, dental service packages, dentist scheduling, and treatment records.",
-    image: "/dentalcombo.svg",
-    gallery: ["/dentalcombo.svg"],
+    image: "/dentalcombo.png",
+    gallery: ["/dentalcombo.png", "/dentalcombo1.png", "/dentalcombo2.png"],
     alt: "Dental Combo Studio Booking System",
     techStack: ["React.js", "Laravel", "MySQL", "Tailwind CSS"],
     features: [
@@ -208,18 +208,18 @@ const projectsData: ProjectDetail[] = [
   {
     id: 12,
     title: "IHMP",
-    category: "Healthcare & Insurance",
+    category: "Work Project",
     description:
-      "Integrated Healthcare Management Platform designed to streamline hospital operations, patient records management, clinical consultations, medical inventory, and department workflows.",
+      "A church management website designed to provide convenient online services for church members and visitors. The system allows users to make donations, book wedding ceremonies, request prayers, and access other church-related services through one platform.",
     image: "/ihmp1.png",
     gallery: ["/ihmp1.png","/ihmp2.png","/ihmp3.png"],
     alt: "IHMP Healthcare Management Platform",
     techStack: ["Laravel", "PHP", "MySQL", "Bootstrap CSS"],
     features: [
       "Role: Full Stack Developer",
-      "Developed centralized electronic medical records (EMR) and patient admission tracking",
-      "Integrated laboratory request workflows, billing processing, and doctor consultation schedules",
-      "Optimized database queries for fast retrieval of patient histories and diagnostics"
+      " Contributed to the development of the website, working on both frontend and backend features for wedding bookings, prayer requests, and other church services",
+      "Participated in client visits and meetings, gathered requirements, and communicated with fellow programmers to coordinate project developmen",
+      "Assigned tasks to team members, monitored progress, and helped coordinate development activities to ensure project requirements were met"
     ]
   },
   {

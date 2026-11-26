@@ -41,16 +41,17 @@ export default function Skills() {
         "Tailwind CSS",
         "Bootstrap CSS",
         "HTML5 / CSS",
-        "Java"
+        "Java",
+        "VB.NET"
       ]
     },
     {
       title: "Backend",
-      skills: ["Laravel", "PHP", "Node.js", "VB.NET"]
+      skills: ["Laravel", "PHP", "Node.js"]
     },
     {
       title: "Databases",
-      skills: ["MySQL", "MongoDB", "Database Design"]
+      skills: ["MySQL", "MongoDB"]
     },
     {
       title: "Tools & DevOps",
