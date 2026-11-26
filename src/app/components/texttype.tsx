@@ -172,10 +172,11 @@ const TextType = ({
     Component,
     {
       ref: containerRef,
+      suppressHydrationWarning: true,
       className: `inline-block whitespace-pre-wrap tracking-tight ${className}`,
       ...props
     },
-    <span className="inline" style={{ color: getCurrentTextColor() || 'inherit' }}>
+    <span className="inline" suppressHydrationWarning style={{ color: getCurrentTextColor() || 'inherit' }}>
       {displayedText}
     </span>,
     showCursor && (

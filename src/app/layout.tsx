@@ -29,14 +29,17 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Karl Christian Brizuela",
   description: "Personal portfolio of Karl Christian Brizuela",
-  keywords:["Full Stack Developer","Portfolio","Freelancer Philippines"],
-  openGraph:{
+  keywords: ["Full Stack Developer", "Portfolio", "Freelancer Philippines"],
+  verification: {
+    google: "BimiADAN08O4Ye7U7qcxvjg3ctBmRUmyVXf40FfuIzE",
+  },
+  openGraph: {
     title: "Karl Christian Brizuela",
     description: "Personal portfolio of Karl Christian Brizuela",
     url: "https://brizuela-karlchristian.vercel.app/",
-    siteName:"Karl Christian Brizuela Portfolio",
+    siteName: "Karl Christian Brizuela Portfolio",
   },
-  icons:{
+  icons: {
     icon: "/karl.png",
   },
 };
@@ -47,9 +50,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
     <html lang="en" suppressHydrationWarning>
       <body
+        suppressHydrationWarning
         className={`${poppins.className} antialiased`}
       >
          <Providers>
@@ -57,6 +60,5 @@ export default function RootLayout({
          </Providers>
       </body>
     </html>
-    </>
   );
 }

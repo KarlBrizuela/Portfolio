@@ -1,19 +1,17 @@
 "use client";
-import { useState, useEffect, useSyncExternalStore } from "react";
+import { useState, useEffect } from "react";
 import { Home, Info, Brain, Mail, Presentation, Menu, X, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-
-const emptySubscribe = () => () => {};
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [themeOpen, setThemeOpen] = useState(false);
-  const mounted = useSyncExternalStore(
-    emptySubscribe,
-    () => true,
-    () => false
-  );
+  const [mounted, setMounted] = useState(false);
   const { setTheme, theme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -105,27 +103,26 @@ export default function Navbar() {
             </button>
           </li>
 
-          {mounted && (
-            <li className="relative">
-              <button 
-                suppressHydrationWarning
-                onClick={() => setThemeOpen(!themeOpen)}
-                className={navItemClass}
-              >
-                {theme === "light" ? (
-                  <Sun size={18} />
-                ) : (
-                  <Moon size={18} />
-                )}
-              </button>
-              {themeOpen && (
-                <div className="absolute top-full right-0 mt-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md shadow-lg">
-                  <button suppressHydrationWarning onClick={() => { setTheme("light"); setThemeOpen(false); }} className="flex items-center gap-2 w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-t-md text-sm"><Sun size={16} /> Light</button>
-                  <button suppressHydrationWarning onClick={() => { setTheme("dark"); setThemeOpen(false); }} className="flex items-center gap-2 w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-b-md text-sm"><Moon size={16} /> Dark</button>
-                </div>
+          <li className="relative">
+            <button 
+              suppressHydrationWarning
+              onClick={() => setThemeOpen(!themeOpen)}
+              className={navItemClass}
+              aria-label="Toggle theme"
+            >
+              {mounted && theme === "light" ? (
+                <Sun size={18} />
+              ) : (
+                <Moon size={18} />
               )}
-            </li>
-          )}
+            </button>
+            {mounted && themeOpen && (
+              <div className="absolute top-full right-0 mt-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md shadow-lg">
+                <button suppressHydrationWarning onClick={() => { setTheme("light"); setThemeOpen(false); }} className="flex items-center gap-2 w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-t-md text-sm"><Sun size={16} /> Light</button>
+                <button suppressHydrationWarning onClick={() => { setTheme("dark"); setThemeOpen(false); }} className="flex items-center gap-2 w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-b-md text-sm"><Moon size={16} /> Dark</button>
+              </div>
+            )}
+          </li>
         </ul>
 
         <button
@@ -187,28 +184,27 @@ export default function Navbar() {
               </button>
             </li>
 
-            {mounted && (
-              <li className="relative border-t border-black/10 dark:border-white/10 pt-2 mt-2">
-                <button 
-                  suppressHydrationWarning
-                  onClick={() => setThemeOpen(!themeOpen)}
-                  className={`${navItemClass} w-full justify-start`}
-                >
-                  {theme === "light" ? (
-                    <Sun size={18} />
-                  ) : (
-                    <Moon size={18} />
-                  )}
-                  <span>Theme</span>
-                </button>
-                {themeOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md shadow-lg">
-                    <button suppressHydrationWarning onClick={() => { setTheme("light"); setThemeOpen(false); }} className="flex items-center gap-2 w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-t-md text-sm"><Sun size={16} /> Light</button>
-                    <button suppressHydrationWarning onClick={() => { setTheme("dark"); setThemeOpen(false); }} className="flex items-center gap-2 w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-b-md text-sm"><Moon size={16} /> Dark</button>
-                  </div>
+            <li className="relative border-t border-black/10 dark:border-white/10 pt-2 mt-2">
+              <button 
+                suppressHydrationWarning
+                onClick={() => setThemeOpen(!themeOpen)}
+                className={`${navItemClass} w-full justify-start`}
+                aria-label="Toggle theme"
+              >
+                {mounted && theme === "light" ? (
+                  <Sun size={18} />
+                ) : (
+                  <Moon size={18} />
                 )}
-              </li>
-            )}
+                <span>Theme</span>
+              </button>
+              {mounted && themeOpen && (
+                <div className="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md shadow-lg">
+                  <button suppressHydrationWarning onClick={() => { setTheme("light"); setThemeOpen(false); }} className="flex items-center gap-2 w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-t-md text-sm"><Sun size={16} /> Light</button>
+                  <button suppressHydrationWarning onClick={() => { setTheme("dark"); setThemeOpen(false); }} className="flex items-center gap-2 w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-b-md text-sm"><Moon size={16} /> Dark</button>
+                </div>
+              )}
+            </li>
           </ul>
         </div>
       )}

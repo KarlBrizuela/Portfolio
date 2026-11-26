@@ -1,7 +1,7 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { useEffect, useState, useSyncExternalStore } from "react";
+import { useEffect, useState } from "react";
 import { X, Layers, CheckCircle2, Images, ChevronLeft, ChevronRight, LayoutGrid, ArrowUpRight } from "lucide-react";
 import Carousel, { CarouselEntry, CarouselItem } from "./Carousel";
 
@@ -23,16 +23,16 @@ const projectsData: ProjectDetail[] = [
     title: "Claretian-ERP",
     category: "ERP",
     description:
-      "A comprehensive School Enterprise Resource Planning (ERP) system designed to centralize academic administration, student information records, enrollment, grade assessment, and tuition financial transactions.",
+      "Developed an Enterprise Resource Planning (ERP) system for Claretian Publications, designed to streamline and manage key business operations across multiple departments. Worked on developing modules for the Accounting Division, Marketing, Production, and User Management.",
     image: "/claretian1.png",
     gallery: ["/claretian1.png","/claretian2.png","/claretian3.png"],
     alt: "Claretian-ERP School Enterprise System",
-    techStack: ["Laravel", "PHP", "MySQL", "Bootstrap CSS"],
+    techStack: ["Laravel", "PHP", "MySQL", "Bootstrap CSS","frankfurther API"],
     features: [
       "Role: Full Stack Developer",
-      "Engineered core modules for student enrollment, registrar management, and tuition billing",
-      "Implemented role-based access control (RBAC) for administrators, faculty members, and students",
-      "Conducted automated and manual testing to ensure data integrity and security across academic records"
+      "ntegrated the Frankfurter API for automated currency exchange rate retrieval and conversion.",
+      "Developed almost the entire ERP system, covering major modules and business workflows.",
+      "Communicated directly with clients to gather requirements, clarify business processes, and discuss system improvements"
     ]
   },
   {
@@ -294,11 +294,12 @@ const projectsData: ProjectDetail[] = [
 
 export default function Projects() {
   const { resolvedTheme } = useTheme();
-  const mounted = useSyncExternalStore(
-    () => () => {},
-    () => true,
-    () => false
-  );
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const [selectedProject, setSelectedProject] = useState<ProjectDetail | null>(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [isAllProjectsOpen, setIsAllProjectsOpen] = useState(false);
@@ -375,7 +376,7 @@ export default function Projects() {
         </p>
 
         {/* Carousel Container */}
-        <div className="w-full flex items-center justify-center mx-auto">
+        <div className="w-full flex items-center justify-center mx-auto" suppressHydrationWarning>
           <Carousel
             items={projectsData}
             baseWidth={850}
