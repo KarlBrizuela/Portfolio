@@ -224,8 +224,8 @@ const projectsData: ProjectDetail[] = [
   },
   {
     id: 13,
-    title: "Powerlug",
-    category: "Healthcare & Insurance",
+    title: "Powerlug - Healthcare & Insurance",
+    category: "Work Project",
     description:
       "A web-based Car Insurance Management System designed to streamline insurance operations, including insurance provider management, policy administration, claim filing, and claims processing.",
     image: "/powerlug.png",
