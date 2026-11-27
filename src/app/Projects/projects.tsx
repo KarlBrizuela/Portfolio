@@ -200,8 +200,8 @@ const projectsData: ProjectDetail[] = [
     techStack: ["React.js", "Laravel", "MySQL", "Tailwind CSS"],
     features: [
       "Role: Full Stack Developer",
-      "Developed dental treatment selection, doctor time-slot booking, and instant confirmation system",
-      "Implemented patient dental chart records, appointment histories, and follow-up notices",
+      "Talked to clients to gather requirements and discuss project progress",
+      "collaborate with team members to improve system functionality",
       "Created clean, modern interface designed to maximize client conversion and streamline clinic desk duties"
     ]
   },
@@ -217,7 +217,7 @@ const projectsData: ProjectDetail[] = [
     techStack: ["Laravel", "PHP", "MySQL", "Bootstrap CSS"],
     features: [
       "Role: Full Stack Developer",
-      " Contributed to the development of the website, working on both frontend and backend features for wedding bookings, prayer requests, and other church services",
+      " Contributed to the development of the website, working on both frontend and backend features",
       "Participated in client visits and meetings, gathered requirements, and communicated with fellow programmers to coordinate project developmen",
       "Assigned tasks to team members, monitored progress, and helped coordinate development activities to ensure project requirements were met"
     ]
