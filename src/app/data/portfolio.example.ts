@@ -59,11 +59,14 @@ export const portfolioData = {
     "Imajica (Aesthetic Clinic Booking System)",
     "Albertos (Resort Room & Facility Booking)",
     "Clearview OB-GYN (Clinic Consultation & Prenatal Booking)",
+    "FitMD (Medical Clinic & Appointment Booking System)",
     "Dental Combo Studio (Dental Clinic & Treatment Booking)",
     "IHMP (Integrated Healthcare Management Platform)",
     "Powerlug (Car Insurance Management System)",
+    "Shinryo (Enterprise Internal Management & Local Server System)",
     "Checkitup (Clinic Management System)",
     "Ramen System (Restaurant POS & Inventory)",
-    "Cuisining (Interactive 3D Learning Platform)"
+    "Cuisining (Interactive 3D Learning Platform)",
+    "QuakeSight (Earthquake Monitoring & Seismic Prediction Platform)"
   ]
 };

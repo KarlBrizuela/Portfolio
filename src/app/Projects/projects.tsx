@@ -57,16 +57,16 @@ const projectsData: ProjectDetail[] = [
     title: "Ricement -thesis project",
     category: "School Project",
     description:
-      "an IoT-Based Rice Husk Ash Production System with Mobile App Control for Farmer-Driven Sustainable Cement Additive Manufacturing",
+      "An IoT-Based Rice Husk Ash Production System with Mobile App Control for Farmer-Driven Sustainable Cement Additive Manufacturing.",
     image: "/ricement.png",
-    gallery: ["/ricement.png","ricement2.png","ricement4.png"],
-    alt: "Ricement Supply Chain ERP",
+    gallery: ["/ricement.png", "/ricement2.png", "/ricement4.png"],
+    alt: "Ricement Thesis Project - IoT Rice Husk Ash System",
     techStack: ["React Native", "Firebase", "Gemini Api", "Esp32"],
     features: [
       "Role: Project Manager",
-      "Built grain inventory tracking, sack batching, price tiering, and supplier management modules",
-      "Created sales order processing, delivery dispatch tracking, and financial invoice reporting",
-      "Conducted rigorous testing and performance optimization for high-volume inventory transactions"
+      "Managed project budgeting and resource allocation, implementing cost-saving and recycling strategies that kept total thesis expenses to only ₱15,000",
+      "Delegated development tasks and tracked sprint milestones for team members using Jira while managing academic papers and documentation",
+      "Spearheaded overall agile project management and facilitated User Acceptance Testing (UAT) to validate system functionality"
     ]
   },
   {
@@ -163,7 +163,7 @@ const projectsData: ProjectDetail[] = [
     image: "/albertos.png",
     gallery: ["/albertos.png", "/albertos1.png", "/albertos2.png"],
     alt: "Albertos Resort Booking System",
-    techStack: ["React.js", "MongoDB", "MERN Stack", "Tailwind CSS"],
+    techStack: ["React.js", "MongoDB", "MERN Stack", "Tailwind CSS", "Postman"],
     features: [
       "Role: Project Manager & Full Stack Developer",
       "Led the development of core system functionalities, including frontend implementation and booking engine",
@@ -177,19 +177,36 @@ const projectsData: ProjectDetail[] = [
     category: "Work Project",
     description:
       "A dedicated OB-GYN Clinic Consultation and Appointment Booking System enabling expectant mothers and patients to book prenatal visits, ultrasound schedules, and manage clinical consultations.",
-    image: "/clearview.svg",
-    gallery: ["/clearview.svg"],
+    image: "/clearview.png",
+    gallery: ["/clearview.png", "/clearview1.png", "/clearview2.png"],
     alt: "Clearview OB-GYN Clinic Booking System",
-    techStack: ["Laravel", "PHP", "MySQL", "Tailwind CSS"],
+    techStack: ["Laravel", "PHP", "MySQL", "Bootstrap CSS"],
     features: [
       "Role: Full Stack Developer",
-      "Built real-time doctor availability calendar and automated appointment slot booking",
-      "Integrated patient history logs, prenatal appointment trackers, and visit reminders",
-      "Designed responsive client-facing portal and intuitive doctor clinic dashboard"
+      "Implemented SMTP integration for automated email notifications to clients.",
+      "Assisted in translating client requests into actionable development tasks",
+      "Collaborated with other programmers to coordinate development tasks and resolve technical concerns"
     ]
   },
   {
     id: 11,
+    title: "FitMD - Medical Clinic",
+    category: "Work Project",
+    description:
+      "A web-based Medical Clinic Management and Appointment System designed to streamline patient consultations, medical appointment booking, clinic workflows, and healthcare record tracking.",
+    image: "/fitmd.png",
+    gallery: ["/fitmd.png", "/fitmd1.png", "/fitmd2.png"],
+    alt: "FitMD Medical Clinic and Appointment System",
+    techStack: ["Laravel", "PHP", "Bootstrap CSS", "MySQL"],
+    features: [
+      "Role: Full Stack Developer",
+      "Contributed to full stack development across backend logic, database operations, and frontend UI",
+      "Collaborated with fellow programmers and development team members to build and integrate clinic appointment features",
+      "Conducted system debugging, troubleshooting, and testing to eliminate errors and ensure reliable operations"
+    ]
+  },
+  {
+    id: 12,
     title: "Dental Combo Studio - Booking",
     category: "Work Project",
     description:
@@ -206,7 +223,7 @@ const projectsData: ProjectDetail[] = [
     ]
   },
   {
-    id: 12,
+    id: 13,
     title: "IHMP",
     category: "Work Project",
     description:
@@ -223,7 +240,7 @@ const projectsData: ProjectDetail[] = [
     ]
   },
   {
-    id: 13,
+    id: 14,
     title: "Powerlug - Healthcare & Insurance",
     category: "Work Project",
     description:
@@ -240,7 +257,24 @@ const projectsData: ProjectDetail[] = [
     ]
   },
   {
-    id: 14,
+    id: 15,
+    title: "Shinryo - Payroll",
+    category: "Work Project",
+    description:
+      "An internal enterprise management system developed for Shinryo, deployed and configured directly onto the client's local server infrastructure for secure on-premises company operations.",
+    image: "/shinryo.png",
+    gallery: ["/shinryo.png", "/shinryo1.png", "/shinryo2.png"],
+    alt: "Shinryo Enterprise Management System",
+    techStack: ["Laravel", "PHP", "Bootstrap CSS", "MySQL", "Local Server"],
+    features: [
+      "Role: Full Stack Developer",
+      "Communicated directly with clients to understand workflows, system specifications, and deployment requirements",
+      "Collaborated with developers and team members to design, develop, and integrate system modules",
+      "Set up and deployed the system on the client's on-premises local server environment for internal corporate usage"
+    ]
+  },
+  {
+    id: 16,
     title: "Check it up",
     category: "School Project",
     description:
@@ -257,7 +291,7 @@ const projectsData: ProjectDetail[] = [
     ]
   },
   {
-    id: 15,
+    id: 17,
     title: "Ramen System",
     category: "School Project",
     description:
@@ -274,7 +308,7 @@ const projectsData: ProjectDetail[] = [
     ]
   },
   {
-    id: 16,
+    id: 18,
     title: "Cuisining",
     category: "School Project",
     description:
@@ -282,12 +316,41 @@ const projectsData: ProjectDetail[] = [
     image: "/Cuisining1.png",
     gallery: ["/Cuisining1.png", "/Cuisining2.png", "/Cuisining3.png"],
     alt: "Cuisining Learning Platform",
-    techStack: ["React.js", "MongoDB", "MERN Stack", "Tailwind CSS", "Unity"],
+    techStack: ["React.js", "MongoDB", "MERN Stack", "Tailwind CSS", "Unity","Postman"],
     features: [
       "Role: Project Manager",
       "Utilized Jira for task management, sprint planning, issue tracking, and development monitoring",
       "Followed Agile development practices to organize tasks and deliver features incrementally",
       "Used Git and GitHub for collaborative source code management and version control"
+    ]
+  },
+  {
+    id: 19,
+    title: "QuakeSight",
+    category: "School Project",
+    description:
+      "An intelligent earthquake monitoring and seismic prediction platform integrating real-time seismic feeds, machine learning forecasting models, and demographic geospatial risk assessment.",
+    image: "/quakesight.png",
+    gallery: ["/quakesight.png", "/quakesight2.png", "/quakesight3.png"],
+    alt: "QuakeSight Earthquake Monitoring and Prediction Platform",
+    techStack: [
+      "Python",
+      "React.js",
+      "Firebase",
+      "XGBoost",
+      "TensorFlow.js",
+      "USGS API",
+      "PHIVOLCS",
+      "PhilAtlas",
+      "PSA (2020)",
+      "ChatGPT",
+      "DeepSeek"
+    ],
+    features: [
+      "Role: Lead Developer & Team Leader",
+      "Integrated live seismic and geospatial data sources including USGS API, PHIVOLCS, PhilAtlas, and PSA (2020) census records",
+      "Developed core earthquake monitoring interfaces and machine learning prediction models using Python, XGBoost, and TensorFlow.js",
+      "Led and managed the development team, coordinating feature roadmap, sprint milestones, and AI integration using ChatGPT & DeepSeek"
     ]
   }
 ];
@@ -626,7 +689,7 @@ export default function Projects() {
                     <Images size={14} className="text-red-500" />
                     Project Screenshots ({galleryList.length} Views)
                   </h4>
-                  <span className="text-[11px] text-zinc-500">Pindutin para makita ng buo</span>
+                 
                 </div>
 
                 <div className="grid grid-cols-3 gap-2.5 sm:gap-3.5">

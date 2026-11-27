@@ -62,7 +62,21 @@ export default function Skills() {
         "GitHub Actions (CI/CD)",
         "Vercel",
         "Postman",
-        "Jira / Agile"
+        "Jira / Agile",
+        
+      ]
+    },
+    {
+      title: "AI Tools/compiler",
+      skills: [
+        "Claude",
+        "Antigravity",
+        "cursor",
+        "Codex",
+        "Gemini",
+        "GitHub Copilot",
+        "Deepseek"
+       
       ]
     }
   ];
